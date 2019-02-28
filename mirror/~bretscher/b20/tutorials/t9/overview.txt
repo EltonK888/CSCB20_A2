@@ -1,0 +1,40 @@
+<!-- your fresh.php file will likely be structured as 2 main parts:
+	1) PHP code to read and process the data files for the user-selected film
+	2) HTML with embedded PHP that follows the structure of your part 1
+		fresh.html file, but which substitutes references to PHP
+		variables for fixed/static strings describing movie details
+
+	Below is an example that illustrates this structure.  First, we read
+	the user-selected movie's overview.txt data into PHP data structures,
+	then, in the following HTML, we insert values from these data structures
+	into the HTML output.
+
+	Note some details are omitted, and marked by "..."
+-->
+
+<?php
+	$movie = ... string value of URL $film parameter
+
+	# read the content of the film's overview.txt file into an array
+	$overview = file(...);
+	$overview_dt;  # an array to hold the dt elements' string content
+	$overview_dd;  # an array to hold the dd elements' string content
+	# iterate through the lines in the overfile_file array
+	foreach ($overview as $line) {
+	    # extract the ":"-separated parts of an overview line
+	    $line_parts = explode(..., $line);
+	    $overview_dt[] = $line_parts[...];  # add first part to the dt array
+	    $overview_dd[] = $line_parts[...];  # add second part to the dd array
+	}
+
+...
+
+         <div>
+             <dl>
+                 <?php
+                     for ($i=0; $i < ...; $i++) { ?>
+                         <dt><?= $overview_dt[$i] ?></dt>
+                         <dd><?= $overview_dd[$i] ?></dd>
+                 <?php  } # end for loop ?>
+            </dl>
+        </div>

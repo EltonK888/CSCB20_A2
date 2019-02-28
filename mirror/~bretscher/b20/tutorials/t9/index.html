@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Tutorial 9, Mar 6</title>
+
+  <link rel="stylesheet" type="text/css" href="../b20.css"/>
+  <style type="text/css">
+	q  { display: none }
+  </style>
+</head>
+<body style="color: rgb(0, 0, 0);" alink="#ee0000" link="#0000ee" vlink="#551a8b">
+<div class="title">
+CSCB20 Tutorial Mar 6
+</div>
+
+<h3>Objectives for this tutorial:</h3>
+<ol>
+<li>Work on PHP related to assignment 2.
+<!--<strong>add in sample of box.html soln</strong>-->
+<li>PHP Coding Tips
+</ol>
+
+<hr/>
+
+<ol>
+
+  <li><h3>Asst 2 Part 2</h3>
+  Today we're going to spend some time working with PHP, to give
+  you ideas for how to approach part 2 of assignment 2.
+  <p>
+  The idea for part 2 is to generalize your solution for part 1,
+  so that rather than just displaying a nice Web page for one
+  particular movie, you allow the user to choose from among a
+  (predefined) set of movies, and using PHP, you'll show the user
+  a nice Web page for their chosen movie.
+  <p>
+  The raw material from which your PHP script will operate is
+  comprised of a set of files, stored in a directory whose name
+  is derived from a movie title; for example, the <code>vampire</code>
+  directory contains these files:
+<pre>
+info.txt      overview.txt  review2.txt  review4.txt  review6.txt  review8.txt
+overview.png  review1.txt   review3.txt  review5.txt  review7.txt
+</pre>
+  <p>
+  Let's consider each of these files based on their content, as detailed
+  in the assignment handout, and see how they are related to the rendered
+  Web page.
+  <ul>
+    <li><a href="http://mathlab.utsc.utoronto.ca/courses/cscb20w17/bretsche/assignments/a2/a2.html#info">info.txt</a></li>
+    <li><a href="http://mathlab.utsc.utoronto.ca/courses/cscb20w17/bretsche/assignments/a2/a2.html#overview">overview.txt</a></li>
+    <li><a href="http://mathlab.utsc.utoronto.ca/courses/cscb20w17/bretsche/assignments/a2/vampire/overview.png">overview.png</a></li>
+    <li><a href="http://mathlab.utsc.utoronto.ca/courses/cscb20w17/bretsche/assignments/a2/a2.html#review">review1.txt, ... reviewN.txt</a></li>
+  </ul>
+  <p>
+  OK, now how are you supposed to obtain a copy of these files?
+  Linked to the handout is a reference to a
+  <a href="http://www.utsc.utoronto.ca/~bretscher/b20/tutorials/t9/www.utsc.utoronto.ca/bretscher/b20/assignments/a2/a2.zip"><code>a2.zip</code></a> file;
+  this is a compressed archive containing all the movie description
+  files for part 2.  Clicking on the link will download the files
+  to your local machine.
+<!--  Alternatively, you can copy the archive on mathlab using:
+<pre>
+cp /courses/webspace/cscb20w17/bretsche/assignment/a2/a2.zip .
+</pre>-->
+
+  To extract the contents of the archive use the unzip command;
+  on mathlab/cmslab (note this will extract into the directory where you
+  run the command):
+<pre>
+unzip a2.zip
+</pre>
+
+  <h4>Part 2 Structural Outline</h4>
+  <p>
+  Your solution to Part 2 will be organized as a set of PHP definitions
+  followed by HTML code.  This HTML is carried over from Part 1,
+  but with injections of PHP code to supply values relevant to
+  the user-selected movie replacing fixed references to the vampire
+  movie used in Part 1.
+  <h5>PHP tasks:</h5>
+  <ul>
+	<li>read the "film" parameter
+	<li>read the relevant film's <code>info.txt</code> file to 
+	obtain the film's" name, year, score.
+	<li>set a variable to refer to the rating-image src (URL)
+	(rottenbig.png or freshbig.png) based on the score value
+	<li>set a variable to refer to the overview.png image src (URL)
+	<li>read the overview.txt file and convert it's contents into
+	an array of HTML &lt;dd> elements (&lt;dt> and &lt;dd>).
+	<li>read the review.txt files into an array.
+  </ul>
+  <h5>In your HTML code:</h5>
+  <ul>
+	<li>refer to PHP variables set above, e.g.
+<pre>
+&lt;title>&lt;?= $name ?> - Rancid Tomatoes&lt;/title>
+</pre>
+  </ul>
+
+  <li><h3>PHP Coding Tips</h3>
+  <p>First, a word of general advice:  develop your PHP code in small,
+	incremental steps.  PHP is relatively easy to learn and write,
+	but when you combine PHP with a browser, it can be difficult
+	to debug errors, since the browser shows only the HTML rendered
+	by your PHP. 
+  <p>Work on one feature at a time, and get that
+	part working before moving on to the next.  When you change your
+	code, do so in small steps, testing after each change that you
+	have not broken your code.
+  <p>Common errors when writing PHP code include forgetting to close
+	a PHP code block with "?>"
+	(you'll see an error about "unexpected $end"), 
+	and forgetting to use an "=" when you want to output a PHP
+	expression value (the value won't appear in your output) or forgetting the ";".
+
+  <p>Let's recall some PHP constructs from class that you may find useful for Asst 2.
+  <dd>
+    <dt><code>$my_var; $my_primes=array(2,3,5,7,11);</code></dt>
+    <dd>Declares variable $my_var.  Declares and initializes array
+ 	variable $my_primes.  PHP variables always begin with the character "$".
+	Like Python, PHP variables can have different types at different
+	points in execution; arrays can have a mix of content types.</dd>
+
+<br/>
+ 
+    <dt><code>“str” . $var . “str”  // str catenation</code></dt>
+    <dd>
+	String catenation is denoted by a period (".") in PHP (not "+").
+    </dd>
+
+<br/>
+
+    <dt><code>$_REQUEST[“name”];</code></dt>
+    <dd>The user will invoke your PHP script with a URL parameter,
+	denoted by a string like <code>?film=vampire</code>, as in this URL:
+<pre>
+https://mathlab.utsc.utoronto.ca/cscb20w16/bretsche/a2/fresh.php?film=vampire
+</pre>
+	Your PHP code will use <code>$_REQUEST</code> to read the film
+	parameter, and could assign it to a variable as in:
+<pre>$film = $_REQUEST["film"];</pre>
+
+    <dt><code>$array = file(string);</code></dt>
+    <dd>
+You need to be able to read the content of the various film-information
+files described above.  <code>file(string)</code> returns the content
+of the string-named file as an array of lines.  For example, to read
+the text of <code>overview.txt</code> into array $synopsis:
+<pre>
+$synopsis = file("overview.txt");
+</pre>
+    </dd>
+
+    <dt><code>$array = glob(string)</code></dt>
+    <dd>
+<code>glob(string)</code> lets you pattern-match on filenames.
+PHP provides several different pattern-defining strings,
+including "*" which matches 0 or more characters,
+"?" which matches any single character, [abcd] which
+matches any single character listed between the brackets.
+For example, to get an array of the filenames review1.txt, review2.txt, ...
+in a directory, you could write:
+<pre>
+$reviews = glob("review*.txt");
+</pre>
+    </dd>
+
+    <dt><code>for (init; end; delta) { };</code></dt>
+    <dd>
+A <code>for</code> loop initializes a control variable, 
+gives a final value for the control to exit the loop,
+and indicates how the control changes on each iteration.  For example:
+<pre>
+for ($i=0; $i&lt;10; $i++) { statements which may reference $i }
+</pre>
+    </dd>
+
+    <dt><code>foreach ($array as $item) { };</code></dt>
+    <dd>
+<code>foreach</code> is a simplified form of <code>for</code> loop
+that works on the elements of an array.  Like the Python
+<code>for element in list:</code> structure, during the i'th
+iteration of the loop, the value of <code>$item</code> will
+be the element of the list indexed by i-1; for example, on the
+2nd iteration, <code>$item</code> will be the $array entry at index 1.
+<p>
+Consider the problem of reading multiple review files for Asst 2.
+To do that, glob() to get an array of filenames,
+foreach() to iterate through the glob() results,
+and file() to read the review file contents into the 
+an array variable.
+</dd>
+
+    <dt><code>list($a,$b,$c) = array</code></dt>
+    <dd>
+Creates named variables to refer to the elements of an array.  E.g.
+<pre>
+$info = array('coffee', 'brown', 'caffeine');
+
+// define individual variables to refer to the elements of array $info
+list($drink, $color, $power) = $info;
+</pre>
+    </dd>
+
+    <dt><code>if (cond) { statements };</code></dt>
+    <dd>
+	If the <code>cond</code> expression
+	evaluates to true then perform the statements.
+    </dd>
+
+<br/>
+
+    <dt><code>function my_func(parameters) { statements }</code></dt>
+    <dd>
+	define a function, that would be called by it's name.
+    </dd>
+</li><li><h3>Sample PHP Code</h3>
+  <a href="overview.txt">overview.php</a> provides a snippet of PHP code
+  that follows the general pattern you'll use for your fresh.php in Part 2.
+  The code is not complete, but the omitted parts (marked by "...") should
+  be fairly straightforward to complete.
+  </li>
+
+<!--<img src="../img/firebug3.png" alt="Firebug screenshot" style="margin: 1em 0;"/>-->
+</ol>
+<br/> <br/>
+</body>
+</html>

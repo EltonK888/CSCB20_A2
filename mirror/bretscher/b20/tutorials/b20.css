@@ -1,0 +1,222 @@
+/* adjust these colors */
+a:link {
+	text-decoration:underline;
+	color:blue;
+}
+
+.menu a:link {
+	text-decoration:underline;
+	color:white;
+}
+
+a:active {
+	color:blue;
+}
+
+a:visited {
+	color:purple;
+}
+
+.menu a:visited {
+	color:lightblue;
+}
+
+.menu a:hover {
+	background-color: #005492;  /* varsity blue tweaked */
+	color: white;
+	padding: 0.3em;
+	cursor: default;
+	/* font-size: 110% */
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	font-family: gill sans mt, garamond, arial, helvetica, sans-serif;
+	background-color: white;
+	color: black;
+}
+
+table.menu {
+	width: 100%;
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 110%;
+	background-color: #0065A4;   /* UT blue */
+	color: white;
+}
+
+tr.title th {
+	/* color: white; */
+	color: #004886;  /* varsity blue */
+	/* background-color: rgb(0, 0, 153); */
+	/* background-color: #0065A4; */   /* UT blue */
+	font-size: 200%;
+	padding: 0.5em;
+	border: none;
+}
+
+table.hrule th,  td {
+	border-bottom: thin black solid;
+}
+
+td.table th {
+	background-color: rgb(100%, 95%, 85%);
+}
+
+td.table {
+	border-bottom: none;
+}
+
+tr.hd th {
+	color: white;
+	/* background-color: rgb(102, 204, 204); */
+	background-color: #0065A4;   /* UT blue */
+	border: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-collapse: collapse;
+}
+
+tr.r0 td {
+	text-align: center;
+	vertical-align: middle;
+	border-collapse: collapse;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: hidden;
+}
+
+tr.r0-last td {
+	text-align: center;
+	vertical-align: middle;
+	border-collapse: collapse;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+tr.r0h td {
+	text-align: center;
+	vertical-align: middle;
+	display: none;
+}
+
+tr.r1 td {
+	text-align: center;
+	vertical-align: middle;
+	background-color: lightgrey;  /* lightgrey */
+	border-collapse: collapse;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: hidden;
+}
+
+tr.r1-last td {
+	text-align: center;
+	vertical-align: middle;
+	background-color: #F0F0F0;  /* lightgrey */
+	background-color: lightgrey;  /* lightgrey */
+	border-collapse: collapse;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+tr.r1h td {
+	text-align: center;
+	vertical-align: middle;
+	background-color: #E0E0E0;  /* lightgrey */
+	display: none;
+}
+
+tr.a0 td {
+	text-align: center;
+	vertical-align: middle;
+	color: rgb(255, 0, 0);
+}
+
+tr.a0h td {
+	text-align: center;
+	vertical-align: middle;
+	color: rgb(255, 0, 0);
+	display: none;
+}
+
+tr.a1 td {
+	text-align: center;
+	vertical-align: middle;
+	color: rgb(255, 0, 0);
+	background-color: rgb(255, 255, 204);
+	border-collapse: collapse;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: hidden;
+}
+
+tr.a1-last td {
+	text-align: center;
+	vertical-align: middle;
+	color: rgb(255, 0, 0);
+	background-color: rgb(255, 255, 204);
+	border-collapse: collapse;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+}
+tr.a1h td {
+	text-align: center;
+	vertical-align: middle;
+	color: rgb(255, 0, 0);
+	background-color: rgb(255, 255, 204);
+	display: none;
+}
+
+div.inset {
+	margin-left: 3em;
+	padding: 1em;
+	border: solid black thin;
+}
+
+div.title {
+	font-size: 175%;
+	font-weight: bolder;
+	color: #004886;  /* varsity blue */
+	padding: 0 0.4em 0.5em;
+	width: 94%;
+	text-align: center;
+	vertical-align: middle;
+}
+
+div#content {
+	height: 68%;
+	width: 100%;
+}
+
+@media screen {
+    body.main {
+	overflow: hidden;
+    }
+
+    div#content, div.content {
+        overflow:auto;
+    }
+} 
+
+@media print {
+	body.asgn {
+		height: 100%;
+		font-family: gill sans mt, garamond, arial, helvetica, sans-serif;
+		background-color: white;
+		color: black;
+		font-size: 80%;
+	}
+}
+
+pre, code {
+	font-size: 120%;
+	font-weight: bolder;
+}

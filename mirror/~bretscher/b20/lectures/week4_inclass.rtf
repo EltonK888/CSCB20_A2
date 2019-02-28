@@ -1,0 +1,679 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww19540\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs48 \cf0 \cb1 \CocoaLigature0 Last login: Sat Jan 21 15:08:54 on ttys001\
+wifihost-110-156:~ bretscher$ ssh bretsche@cmslab.utsc.utoronto.ca\
+bretsche@cmslab.utsc.utoronto.ca's password: \
+Welcome to Ubuntu 16.04.1 LTS (GNU/Linux 4.4.0-45-generic x86_64)\
+\
+ * Documentation:  https://help.ubuntu.com\
+ * Management:     https://landscape.canonical.com\
+ * Support:        https://ubuntu.com/advantage\
+\
+64 packages can be updated.\
+0 updates are security updates.\
+\
+\
+*** System restart required ***\
+Last login: Fri Jan 20 10:15:43 2017 from 74.14.233.4\
+bretsche@cmslab:~$ mysql -u bretsche -pbretsche\
+mysql: [Warning] Using a password on the command line interface can be insecure.\
+Welcome to the MySQL monitor.  Commands end with ; or \\g.\
+Your MySQL connection id is 817\
+Server version: 5.7.17-0ubuntu0.16.04.1 (Ubuntu)\
+\
+Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.\
+\
+Oracle is a registered trademark of Oracle Corporation and/or its\
+affiliates. Other names may be trademarks of their respective\
+owners.\
+\
+Type 'help;' or '\\h' for help. Type '\\c' to clear the current input statement.\
+\
+mysql> show databases;\
++--------------------+\
+| Database           |\
++--------------------+\
+| information_schema |\
+| IMDB               |\
+| IMDB_SMALL         |\
+| cscb20w17_bretsche |\
++--------------------+\
+4 rows in set (0.00 sec)\
+\
+mysql> use cscb20w17_bretsche;\
+Reading table information for completion of table and column names\
+You can turn off this feature to get a quicker startup with -A\
+\
+Database changed\
+mysql> show tables;\
++------------------------------+\
+| Tables_in_cscb20w17_bretsche |\
++------------------------------+\
+| advisor                      |\
+| classroom                    |\
+| course                       |\
+| department                   |\
+| instructor                   |\
+| prereq                       |\
+| section                      |\
+| student                      |\
+| takes                        |\
+| teaches                      |\
+| time_slot                    |\
++------------------------------+\
+11 rows in set (0.00 sec)\
+\
+mysql> show columns from instructor;\
++-----------+--------------+------+-----+---------+-------+\
+| Field     | Type         | Null | Key | Default | Extra |\
++-----------+--------------+------+-----+---------+-------+\
+| id        | varchar(5)   | NO   | PRI |         |       |\
+| name      | varchar(20)  | NO   |     | NULL    |       |\
+| dept_name | varchar(20)  | YES  |     | NULL    |       |\
+| salary    | decimal(8,2) | YES  |     | NULL    |       |\
++-----------+--------------+------+-----+---------+-------+\
+4 rows in set (0.00 sec)\
+\
+mysql> select * from instructor;\
++-------+------------+------------+----------+\
+| id    | name       | dept_name  | salary   |\
++-------+------------+------------+----------+\
+| 10101 | Srinivasan | Comp. Sci. | 65000.00 |\
+| 12121 | Wu         | Finance    | 90000.00 |\
+| 15151 | Mozart     | Music      | 40000.00 |\
+| 22222 | Einstein   | Physics    | 95000.00 |\
+| 32343 | El Said    | History    | 60000.00 |\
+| 33456 | Gold       | Physics    | 87000.00 |\
+| 45565 | Katz       | Comp. Sci. | 75000.00 |\
+| 58583 | Califieri  | History    | 62000.00 |\
+| 76543 | Singh      | Finance    | 80000.00 |\
+| 76766 | Crick      | Biology    | 72000.00 |\
+| 83821 | Brandt     | Comp. Sci. | 92000.00 |\
+| 98345 | Kim        | Elec. Eng. | 80000.00 |\
++-------+------------+------------+----------+\
+12 rows in set (0.00 sec)\
+\
+mysql> select name from instructor;\
++------------+\
+| name       |\
++------------+\
+| Srinivasan |\
+| Wu         |\
+| Mozart     |\
+| Einstein   |\
+| El Said    |\
+| Gold       |\
+| Katz       |\
+| Califieri  |\
+| Singh      |\
+| Crick      |\
+| Brandt     |\
+| Kim        |\
++------------+\
+12 rows in set (0.00 sec)\
+\
+mysql> select name, dept_name from instructor;\
++------------+------------+\
+| name       | dept_name  |\
++------------+------------+\
+| Srinivasan | Comp. Sci. |\
+| Wu         | Finance    |\
+| Mozart     | Music      |\
+| Einstein   | Physics    |\
+| El Said    | History    |\
+| Gold       | Physics    |\
+| Katz       | Comp. Sci. |\
+| Califieri  | History    |\
+| Singh      | Finance    |\
+| Crick      | Biology    |\
+| Brandt     | Comp. Sci. |\
+| Kim        | Elec. Eng. |\
++------------+------------+\
+12 rows in set (0.00 sec)\
+\
+mysql> select dept_name from instructor;\
++------------+\
+| dept_name  |\
++------------+\
+| Comp. Sci. |\
+| Finance    |\
+| Music      |\
+| Physics    |\
+| History    |\
+| Physics    |\
+| Comp. Sci. |\
+| History    |\
+| Finance    |\
+| Biology    |\
+| Comp. Sci. |\
+| Elec. Eng. |\
++------------+\
+12 rows in set (0.00 sec)\
+\
+mysql> select distinct dept_name from instructor;\
++------------+\
+| dept_name  |\
++------------+\
+| Comp. Sci. |\
+| Finance    |\
+| Music      |\
+| Physics    |\
+| History    |\
+| Biology    |\
+| Elec. Eng. |\
++------------+\
+7 rows in set (0.00 sec)\
+\
+mysql> select name, dept_name from instructor order by dept_name;\
++------------+------------+\
+| name       | dept_name  |\
++------------+------------+\
+| Crick      | Biology    |\
+| Srinivasan | Comp. Sci. |\
+| Katz       | Comp. Sci. |\
+| Brandt     | Comp. Sci. |\
+| Kim        | Elec. Eng. |\
+| Wu         | Finance    |\
+| Singh      | Finance    |\
+| El Said    | History    |\
+| Califieri  | History    |\
+| Mozart     | Music      |\
+| Einstein   | Physics    |\
+| Gold       | Physics    |\
++------------+------------+\
+12 rows in set (0.00 sec)\
+\
+mysql> SELECT * FROM course;\
++-----------+----------------------------+------------+---------+\
+| course_id | title                      | dept_name  | credits |\
++-----------+----------------------------+------------+---------+\
+| BIO-101   | Intro. to Biology          | Biology    |       4 |\
+| BIO-301   | Genetics                   | Biology    |       4 |\
+| BIO-399   | Computational Biology      | Biology    |       3 |\
+| CS-101    | Intro. to Computer Science | Comp. Sci. |       4 |\
+| CS-190    | Game Design                | Comp. Sci. |       4 |\
+| CS-315    | Robotics                   | Comp. Sci. |       3 |\
+| CS-319    | Image Processing           | Comp. Sci. |       3 |\
+| CS-347    | Database System Concepts   | Comp. Sci. |       3 |\
+| EE-181    | Intro. to Digital Systems  | Elec. Eng. |       3 |\
+| FIN-201   | Investment Banking         | Finance    |       3 |\
+| HIS-351   | World History              | History    |       3 |\
+| MU-199    | Music Video Production     | Music      |       3 |\
+| PHY-101   | Physical Principles        | Physics    |       4 |\
++-----------+----------------------------+------------+---------+\
+13 rows in set (0.00 sec)\
+\
+mysql> select name, dept_name from instructor order by dept_name, name;\
++------------+------------+\
+| name       | dept_name  |\
++------------+------------+\
+| Crick      | Biology    |\
+| Brandt     | Comp. Sci. |\
+| Katz       | Comp. Sci. |\
+| Srinivasan | Comp. Sci. |\
+| Kim        | Elec. Eng. |\
+| Singh      | Finance    |\
+| Wu         | Finance    |\
+| Califieri  | History    |\
+| El Said    | History    |\
+| Mozart     | Music      |\
+| Einstein   | Physics    |\
+| Gold       | Physics    |\
++------------+------------+\
+12 rows in set (0.00 sec)\
+\
+mysql> select name from instructor where dept_name = 'Comp. Sci.';\
++------------+\
+| name       |\
++------------+\
+| Srinivasan |\
+| Katz       |\
+| Brandt     |\
++------------+\
+3 rows in set (0.00 sec)\
+\
+mysql> select name from instructor where dept_name = 'Comp. Sci.' and salary > 80000;\
++--------+\
+| name   |\
++--------+\
+| Brandt |\
++--------+\
+1 row in set (0.00 sec)\
+\
+mysql> select name, salary from instructor where salary >= 65000 order by salary;\
++------------+----------+\
+| name       | salary   |\
++------------+----------+\
+| Srinivasan | 65000.00 |\
+| Crick      | 72000.00 |\
+| Katz       | 75000.00 |\
+| Singh      | 80000.00 |\
+| Kim        | 80000.00 |\
+| Gold       | 87000.00 |\
+| Wu         | 90000.00 |\
+| Brandt     | 92000.00 |\
+| Einstein   | 95000.00 |\
++------------+----------+\
+9 rows in set (0.00 sec)\
+\
+mysql> select name, salary from instructor where salary >= 65000 order by -salary;\
++------------+----------+\
+| name       | salary   |\
++------------+----------+\
+| Einstein   | 95000.00 |\
+| Brandt     | 92000.00 |\
+| Wu         | 90000.00 |\
+| Gold       | 87000.00 |\
+| Singh      | 80000.00 |\
+| Kim        | 80000.00 |\
+| Katz       | 75000.00 |\
+| Crick      | 72000.00 |\
+| Srinivasan | 65000.00 |\
++------------+----------+\
+9 rows in set (0.00 sec)\
+\
+mysql> select name, salary from instructor where salary >= 65000 order by salary desc;\
++------------+----------+\
+| name       | salary   |\
++------------+----------+\
+| Einstein   | 95000.00 |\
+| Brandt     | 92000.00 |\
+| Wu         | 90000.00 |\
+| Gold       | 87000.00 |\
+| Singh      | 80000.00 |\
+| Kim        | 80000.00 |\
+| Katz       | 75000.00 |\
+| Crick      | 72000.00 |\
+| Srinivasan | 65000.00 |\
++------------+----------+\
+9 rows in set (0.00 sec)\
+\
+mysql> select name, salary from instructor where salary >= 65000 order by salary asc;\
++------------+----------+\
+| name       | salary   |\
++------------+----------+\
+| Srinivasan | 65000.00 |\
+| Crick      | 72000.00 |\
+| Katz       | 75000.00 |\
+| Singh      | 80000.00 |\
+| Kim        | 80000.00 |\
+| Gold       | 87000.00 |\
+| Wu         | 90000.00 |\
+| Brandt     | 92000.00 |\
+| Einstein   | 95000.00 |\
++------------+----------+\
+9 rows in set (0.00 sec)\
+\
+mysql> select * from teaches;\
++-------+-----------+--------+----------+------+\
+| id    | course_id | sec_id | semester | year |\
++-------+-----------+--------+----------+------+\
+| 10101 | CS-101    | 1      | Fall     | 2009 |\
+| 10101 | CS-315    | 1      | Spring   | 2010 |\
+| 10101 | CS-347    | 1      | Fall     | 2009 |\
+| 12121 | FIN-201   | 1      | Spring   | 2010 |\
+| 15151 | MU-199    | 1      | Spring   | 2010 |\
+| 22222 | PHY-101   | 1      | Fall     | 2009 |\
+| 32343 | HIS-351   | 1      | Spring   | 2010 |\
+| 45565 | CS-101    | 1      | Spring   | 2010 |\
+| 45565 | CS-319    | 1      | Spring   | 2010 |\
+| 76766 | BIO-101   | 1      | Summer   | 2009 |\
+| 76766 | BIO-301   | 1      | Summer   | 2010 |\
+| 83821 | CS-190    | 1      | Spring   | 2009 |\
+| 83821 | CS-190    | 2      | Spring   | 2009 |\
+| 83821 | CS-319    | 2      | Spring   | 2010 |\
+| 98345 | EE-181    | 1      | Spring   | 2009 |\
++-------+-----------+--------+----------+------+\
+15 rows in set (0.00 sec)\
+\
+mysql> select * from instructor;\
++-------+------------+------------+----------+\
+| id    | name       | dept_name  | salary   |\
++-------+------------+------------+----------+\
+| 10101 | Srinivasan | Comp. Sci. | 65000.00 |\
+| 12121 | Wu         | Finance    | 90000.00 |\
+| 15151 | Mozart     | Music      | 40000.00 |\
+| 22222 | Einstein   | Physics    | 95000.00 |\
+| 32343 | El Said    | History    | 60000.00 |\
+| 33456 | Gold       | Physics    | 87000.00 |\
+| 45565 | Katz       | Comp. Sci. | 75000.00 |\
+| 58583 | Califieri  | History    | 62000.00 |\
+| 76543 | Singh      | Finance    | 80000.00 |\
+| 76766 | Crick      | Biology    | 72000.00 |\
+| 83821 | Brandt     | Comp. Sci. | 92000.00 |\
+| 98345 | Kim        | Elec. Eng. | 80000.00 |\
++-------+------------+------------+----------+\
+12 rows in set (0.00 sec)\
+\
+mysql> select * from instructor natural join teaches;\
++-------+------------+------------+----------+-----------+--------+----------+------+\
+| id    | name       | dept_name  | salary   | course_id | sec_id | semester | year |\
++-------+------------+------------+----------+-----------+--------+----------+------+\
+| 10101 | Srinivasan | Comp. Sci. | 65000.00 | CS-101    | 1      | Fall     | 2009 |\
+| 10101 | Srinivasan | Comp. Sci. | 65000.00 | CS-315    | 1      | Spring   | 2010 |\
+| 10101 | Srinivasan | Comp. Sci. | 65000.00 | CS-347    | 1      | Fall     | 2009 |\
+| 12121 | Wu         | Finance    | 90000.00 | FIN-201   | 1      | Spring   | 2010 |\
+| 15151 | Mozart     | Music      | 40000.00 | MU-199    | 1      | Spring   | 2010 |\
+| 22222 | Einstein   | Physics    | 95000.00 | PHY-101   | 1      | Fall     | 2009 |\
+| 32343 | El Said    | History    | 60000.00 | HIS-351   | 1      | Spring   | 2010 |\
+| 45565 | Katz       | Comp. Sci. | 75000.00 | CS-101    | 1      | Spring   | 2010 |\
+| 45565 | Katz       | Comp. Sci. | 75000.00 | CS-319    | 1      | Spring   | 2010 |\
+| 76766 | Crick      | Biology    | 72000.00 | BIO-101   | 1      | Summer   | 2009 |\
+| 76766 | Crick      | Biology    | 72000.00 | BIO-301   | 1      | Summer   | 2010 |\
+| 83821 | Brandt     | Comp. Sci. | 92000.00 | CS-190    | 1      | Spring   | 2009 |\
+| 83821 | Brandt     | Comp. Sci. | 92000.00 | CS-190    | 2      | Spring   | 2009 |\
+| 83821 | Brandt     | Comp. Sci. | 92000.00 | CS-319    | 2      | Spring   | 2010 |\
+| 98345 | Kim        | Elec. Eng. | 80000.00 | EE-181    | 1      | Spring   | 2009 |\
++-------+------------+------------+----------+-----------+--------+----------+------+\
+15 rows in set (0.00 sec)\
+\
+mysql> select name, course_id from instructor natural join teaches  where year = '2010' order by course_id;\
++------------+-----------+\
+| name       | course_id |\
++------------+-----------+\
+| Crick      | BIO-301   |\
+| Katz       | CS-101    |\
+| Srinivasan | CS-315    |\
+| Katz       | CS-319    |\
+| Brandt     | CS-319    |\
+| Wu         | FIN-201   |\
+| El Said    | HIS-351   |\
+| Mozart     | MU-199    |\
++------------+-----------+\
+8 rows in set (0.00 sec)\
+\
+mysql> select * from department;\
++------------+----------+-----------+\
+| dept_name  | building | budget    |\
++------------+----------+-----------+\
+| Biology    | Watson   |  90000.00 |\
+| Comp. Sci. | Taylor   | 100000.00 |\
+| Elec. Eng. | Taylor   |  85000.00 |\
+| Finance    | Painter  | 120000.00 |\
+| History    | Painter  |  50000.00 |\
+| Music      | Packard  |  80000.00 |\
+| Physics    | Watson   |  70000.00 |\
++------------+----------+-----------+\
+7 rows in set (0.00 sec)\
+\
+mysql> select A.dept_name, B.dept_name from department A inner join department B \
+    -> on A.dept_name != B.dept_name \
+    -> and A.building = B.building \
+    -> order by A.building;\
+\
++------------+------------+\
+| dept_name  | dept_name  |\
++------------+------------+\
+| History    | Finance    |\
+| Finance    | History    |\
+| Elec. Eng. | Comp. Sci. |\
+| Comp. Sci. | Elec. Eng. |\
+| Biology    | Physics    |\
+| Physics    | Biology    |\
++------------+------------+\
+6 rows in set (0.00 sec)\
+\
+mysql> select * from teaches;\
++-------+-----------+--------+----------+------+\
+| id    | course_id | sec_id | semester | year |\
++-------+-----------+--------+----------+------+\
+| 10101 | CS-101    | 1      | Fall     | 2009 |\
+| 10101 | CS-315    | 1      | Spring   | 2010 |\
+| 10101 | CS-347    | 1      | Fall     | 2009 |\
+| 12121 | FIN-201   | 1      | Spring   | 2010 |\
+| 15151 | MU-199    | 1      | Spring   | 2010 |\
+| 22222 | PHY-101   | 1      | Fall     | 2009 |\
+| 32343 | HIS-351   | 1      | Spring   | 2010 |\
+| 45565 | CS-101    | 1      | Spring   | 2010 |\
+| 45565 | CS-319    | 1      | Spring   | 2010 |\
+| 76766 | BIO-101   | 1      | Summer   | 2009 |\
+| 76766 | BIO-301   | 1      | Summer   | 2010 |\
+| 83821 | CS-190    | 1      | Spring   | 2009 |\
+| 83821 | CS-190    | 2      | Spring   | 2009 |\
+| 83821 | CS-319    | 2      | Spring   | 2010 |\
+| 98345 | EE-181    | 1      | Spring   | 2009 |\
++-------+-----------+--------+----------+------+\
+15 rows in set (0.00 sec)\
+\
+mysql> select A.id from teaches A inner join teaches B \
+    -> on A.id = B.id and \
+    -> A.semester =  B.semester and \
+    -> A.year = B.year and \
+    -> A.course_id != B.course_id;\
++-------+\
+| id    |\
++-------+\
+| 10101 |\
+| 10101 |\
+| 45565 |\
+| 45565 |\
++-------+\
+4 rows in set (0.00 sec)\
+\
+mysql> select A.id from teaches A inner join teaches B  on A.id = B.id and  A.semester =  B.semester and  A.year = B.year and A.course_id != B.course_id;\
++-------+\
+| id    |\
++-------+\
+| 10101 |\
+| 10101 |\
+| 45565 |\
+| 45565 |\
++-------+\
+4 rows in set (0.00 sec)\
+\
+mysql> select A.id from teaches A inner join teaches B  on A.id = B.id and  A.semester =  B.semester and  A.year = B.year and \
+    -> (A.course_id != B.course_id or (A.course_id = B.course_id and A.sec_id != B.sec_id));\
++-------+\
+| id    |\
++-------+\
+| 10101 |\
+| 10101 |\
+| 45565 |\
+| 45565 |\
+| 83821 |\
+| 83821 |\
++-------+\
+6 rows in set (0.00 sec)\
+\
+mysql> select distinct A.id from teaches A inner join teaches B  on A.id = B.id and  A.semester =  B.semester and  A.year = B.year and  (A.course_id != B.course_id or (A.course_id = B.course_id and A.sec_id != B.sec_id));\
++-------+\
+| id    |\
++-------+\
+| 10101 |\
+| 45565 |\
+| 83821 |\
++-------+\
+3 rows in set (0.00 sec)\
+\
+mysql> show columns from teaches;\
++-----------+--------------+------+-----+---------+-------+\
+| Field     | Type         | Null | Key | Default | Extra |\
++-----------+--------------+------+-----+---------+-------+\
+| id        | varchar(5)   | NO   | PRI |         |       |\
+| course_id | varchar(8)   | NO   | PRI |         |       |\
+| sec_id    | varchar(8)   | NO   | PRI |         |       |\
+| semester  | varchar(6)   | NO   | PRI |         |       |\
+| year      | decimal(4,0) | NO   | PRI | 0       |       |\
++-----------+--------------+------+-----+---------+-------+\
+5 rows in set (0.00 sec)\
+\
+mysql> show columns from instructor;\
++-----------+--------------+------+-----+---------+-------+\
+| Field     | Type         | Null | Key | Default | Extra |\
++-----------+--------------+------+-----+---------+-------+\
+| id        | varchar(5)   | NO   | PRI |         |       |\
+| name      | varchar(20)  | NO   |     | NULL    |       |\
+| dept_name | varchar(20)  | YES  |     | NULL    |       |\
+| salary    | decimal(8,2) | YES  |     | NULL    |       |\
++-----------+--------------+------+-----+---------+-------+\
+4 rows in set (0.01 sec)\
+\
+mysql> SELECT DISTINCT name, A.course_id FROM \
+    -> teaches A INNER JOIN teaches B INNER JOIN instructor\
+    -> ON A.semester = B.semester\
+    -> AND A.year = B.year \
+    -> AND (A.course_id != B.course_id OR (A.course_id = B.course_id AND A.sec_id != B.sec_id)) \
+    -> AND A.id = B.id \
+    -> AND A.id = instructor.id; \
++------------+-----------+\
+| name       | course_id |\
++------------+-----------+\
+| Srinivasan | CS-101    |\
+| Srinivasan | CS-347    |\
+| Katz       | CS-101    |\
+| Katz       | CS-319    |\
+| Brandt     | CS-190    |\
++------------+-----------+\
+5 rows in set (0.01 sec)\
+\
+mysql> select AVG(salary) from instructor;\
++--------------+\
+| AVG(salary)  |\
++--------------+\
+| 74833.333333 |\
++--------------+\
+1 row in set (0.00 sec)\
+\
+mysql> select MAX(salary) from instructor;\
++-------------+\
+| MAX(salary) |\
++-------------+\
+|    95000.00 |\
++-------------+\
+1 row in set (0.00 sec)\
+\
+mysql> select MIN(salary) from instructor;\
++-------------+\
+| MIN(salary) |\
++-------------+\
+|    40000.00 |\
++-------------+\
+1 row in set (0.00 sec)\
+\
+mysql> select SUM(salary) from instructor;\
++-------------+\
+| SUM(salary) |\
++-------------+\
+|   898000.00 |\
++-------------+\
+1 row in set (0.00 sec)\
+\
+mysql> show columns from instructor;\
++-----------+--------------+------+-----+---------+-------+\
+| Field     | Type         | Null | Key | Default | Extra |\
++-----------+--------------+------+-----+---------+-------+\
+| id        | varchar(5)   | NO   | PRI |         |       |\
+| name      | varchar(20)  | NO   |     | NULL    |       |\
+| dept_name | varchar(20)  | YES  |     | NULL    |       |\
+| salary    | decimal(8,2) | YES  |     | NULL    |       |\
++-----------+--------------+------+-----+---------+-------+\
+4 rows in set (0.00 sec)\
+\
+mysql> select count(name) from instructor;\
++-------------+\
+| count(name) |\
++-------------+\
+|          12 |\
++-------------+\
+1 row in set (0.00 sec)\
+\
+mysql> select AVG(salary) from instructor;\
++--------------+\
+| AVG(salary)  |\
++--------------+\
+| 74833.333333 |\
++--------------+\
+1 row in set (0.00 sec)\
+\
+mysql> select avg(salary) AS 'Average Salary' from instructor;\
++----------------+\
+| Average Salary |\
++----------------+\
+|   74833.333333 |\
++----------------+\
+1 row in set (0.00 sec)\
+\
+mysql> select avg(salary) from instructor where dept_name = 'Comp. Sci';\
++-------------+\
+| avg(salary) |\
++-------------+\
+|        NULL |\
++-------------+\
+1 row in set (0.00 sec)\
+\
+mysql> select * from instructor;\
++-------+------------+------------+----------+\
+| id    | name       | dept_name  | salary   |\
++-------+------------+------------+----------+\
+| 10101 | Srinivasan | Comp. Sci. | 65000.00 |\
+| 12121 | Wu         | Finance    | 90000.00 |\
+| 15151 | Mozart     | Music      | 40000.00 |\
+| 22222 | Einstein   | Physics    | 95000.00 |\
+| 32343 | El Said    | History    | 60000.00 |\
+| 33456 | Gold       | Physics    | 87000.00 |\
+| 45565 | Katz       | Comp. Sci. | 75000.00 |\
+| 58583 | Califieri  | History    | 62000.00 |\
+| 76543 | Singh      | Finance    | 80000.00 |\
+| 76766 | Crick      | Biology    | 72000.00 |\
+| 83821 | Brandt     | Comp. Sci. | 92000.00 |\
+| 98345 | Kim        | Elec. Eng. | 80000.00 |\
++-------+------------+------------+----------+\
+12 rows in set (0.00 sec)\
+\
+mysql> select avg(salary) from instructor where dept_name = 'Comp. Sci.';\
++--------------+\
+| avg(salary)  |\
++--------------+\
+| 77333.333333 |\
++--------------+\
+1 row in set (0.00 sec)\
+\
+mysql> select dept_name, avg(salary) from instructor group by dept_name;\
++------------+--------------+\
+| dept_name  | avg(salary)  |\
++------------+--------------+\
+| Biology    | 72000.000000 |\
+| Comp. Sci. | 77333.333333 |\
+| Elec. Eng. | 80000.000000 |\
+| Finance    | 85000.000000 |\
+| History    | 61000.000000 |\
+| Music      | 40000.000000 |\
+| Physics    | 91000.000000 |\
++------------+--------------+\
+7 rows in set (0.00 sec)\
+\
+mysql> select dept_name, count(name) as 'Num. of Faculty' from instructor group by dept_name;\
++------------+-----------------+\
+| dept_name  | Num. of Faculty |\
++------------+-----------------+\
+| Biology    |               1 |\
+| Comp. Sci. |               3 |\
+| Elec. Eng. |               1 |\
+| Finance    |               2 |\
+| History    |               2 |\
+| Music      |               1 |\
+| Physics    |               2 |\
++------------+-----------------+\
+7 rows in set (0.00 sec)\
+\
+mysql> select dept_name, avg(salary) from instructor \
+    -> group by dept_name \
+    -> having avg(salary) > 42000;\
++------------+--------------+\
+| dept_name  | avg(salary)  |\
++------------+--------------+\
+| Biology    | 72000.000000 |\
+| Comp. Sci. | 77333.333333 |\
+| Elec. Eng. | 80000.000000 |\
+| Finance    | 85000.000000 |\
+| History    | 61000.000000 |\
+| Physics    | 91000.000000 |\
++------------+--------------+\
+6 rows in set (0.00 sec)\
+\
+mysql> \
+}

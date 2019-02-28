@@ -1,0 +1,62 @@
+			#firebugscreenshots {
+				text-align: center;
+				white-space: nowrap;
+			}
+			
+			#inputfiles code.filename {
+				background-color: #ffffcc;
+				font-size: larger;
+				font-weight: bold;
+			}
+			
+			pre {
+				background-color: #f8f8ff;
+				border: 1px dashed blue;
+				padding: 0.5em;
+			}
+			
+			img.overview {
+				float: right;
+				margin-left: 20px;
+				width: 100px;
+			}
+			
+			pre.respectoverview {
+				margin-right: 120px;
+			}
+			
+			p.afteroverview {
+				clear: right;
+			}
+			
+			.queryparameter {
+				color: #000066;
+				font-weight: bold;
+				text-decoration: underline;
+			}
+			
+			ul {
+				padding-left: 1.5em;
+			}
+			
+			var {
+				color: #770000;
+				font-style: italic;
+				font-weight: bold;
+			}
+
+			figure {
+				display: inline-block;
+				white-space: normal;
+			}
+
+		
+			img { 
+				width: 45%;
+			}
+			#images img {
+				max-height: 70pt;
+			}
+			#firebugscreenshots img {
+				max-height: 170pt;
+			}

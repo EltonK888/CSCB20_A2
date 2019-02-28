@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+		
+	<base href=""/>
+	<link rel="stylesheet" type="text/css" href="https://www.utsc.utoronto.ca/bretscher/b20assignments/b20.css"/>
+	<link rel="stylesheet" type="text/css" href="https://www.utsc.utoronto.ca/bretscher/b20assignments/style/style.css"/>
+	<link rel="stylesheet" type="text/css" href="https://www.utsc.utoronto.ca/bretscher/b20assignments/style/a1.css"/>
+	<link rel="stylesheet" type="text/css" href="https://www.utsc.utoronto.ca/bretscher/b20assignments/style/print.css" media="print"/>
+
+
+	<title>CSCB20 Assignment 1 (Movie Database)</title>
+	
+	<style type="text/css">
+		#firebugscreenshots {
+			text-align: center;
+			white-space: nowrap;
+		}
+	        div.note { border: 1px dashed #094661; background-color: #EDDBED; padding: 0.5em; margin: 1em 0em; }
+	</style>
+	
+	<style type="text/css" media="print">
+		#images img {
+			max-height: 150pt;
+		}
+		#firebugscreenshots img {
+			max-height: 170pt;
+		}
+	</style>
+  </head>
+
+  <body>
+	<div class="title">CSCB20 Assignment 1: Movie-Database Queries<br/>
+	<span class="subheading">Part 1 due Wed 1 Feb, 2017, 11:59pm</span><br/>
+		<span class="subheading">Part 2 due Saturday 11 Feb, 2017, 11:59pm</span>
+
+	</div>
+
+	<h2 id="part1">Part 1: Database Schema</h2> 
+		<div id="intent">
+			<p>
+			This assignment step is intended to strengthen your
+			understanding of Relational Schema for databases. In particular, understanding how to draw schema diagrams, recognize 
+			primary keys and foreign key constraints.  
+			</p>
+		</div>
+
+		<div id="expectedappearance">
+			<p>
+			For this assignment step you will use the given relation schemas and draw a schema diagram.  Your diagram should underline 
+			primary keys and link foreign key constraints as done in class with the university schema.
+			</p>
+
+<h3>An IMDB Database</h3>
+	<h4>
+		Consider the following movie website <a href="http://www.imdb.com/">iMDB</a>.  This website uses a movie database.  A possible set of relations for this 
+		database are below:
+	</h4>
+
+<p>	<div style="overflow: hidden;">
+		<table class="sqltable" style="float: left; margin-left: 30px; margin-bottom: 30px">
+			<caption>actors</caption>
+			<tr><th>id</th><th>first_name</th><th>last_name</th><th>gender</th></tr>
+			<tr><td>433259</td><td>William</td><td>Shatner</td><td>M</td></tr>
+			<tr><td>797926</td><td>Britney</td><td>Spears</td><td>F</td></tr>
+			<tr><td>831289</td><td>Sigourney</td><td>Weaver</td><td>F</td></tr>
+			<tr><td colspan="4" style="text-align: center">...</td></tr>
+		</table>
+
+		<table class="sqltable" style="float: left; margin-left: 30px; margin-bottom: 30px">
+			<caption>movies</caption>
+			<tr><th>id</th><th>name</th><th>year</th><th>rank</th></tr>
+			<tr><td>112290</td><td>Fight Club</td><td>1999</td><td>8.5</td></tr>
+			<tr><td>209658</td><td>Meet the Parents</td><td>2000</td><td>7</td></tr>
+			<tr><td>210511</td><td>Memento</td><td>2000</td><td>8.7</td></tr>
+			<tr><td colspan="4" style="text-align: center">...</td></tr>
+		</table>
+
+		<table class="sqltable" style="float: left; margin-left: 30px; margin-bottom: 30px">
+			<caption>roles</caption>
+			<tr><th>actor_id</th><th>movie_id</th><th>role</th></tr>
+			<tr><td>433259</td><td>313398</td><td>Capt. James T. Kirk</td></tr>
+			<tr><td>433259</td><td>407323</td><td>Sgt. T.J. Hooker</td></tr>
+			<tr><td>797926</td><td>342189</td><td>Herself</td></tr>
+			<tr><td colspan="3" style="text-align: center">...</td></tr>
+		</table>
+
+		<table class="sqltable" style="float: left; margin-left: 30px; margin-bottom: 30px">
+			<caption>movies_genres</caption>
+			<tr><th>movie_id</th><th>genre</th></tr>
+			<tr><td>209658</td><td>Comedy</td></tr>
+			<tr><td>313398</td><td>Action</td></tr>
+			<tr><td>313398</td><td>Sci-Fi</td></tr>
+			<tr><td colspan="2" style="text-align: center">...</td></tr>
+		</table>
+
+		<table class="sqltable" style="float: left; margin-left: 30px;margin-bottom: 30px">
+			<caption>directors</caption>
+			<tr><th>id</th><th>first_name</th><th>last_name</th></tr>
+			<tr><td>24758</td><td>David</td><td>Fincher</td></tr>
+			<tr><td>66965</td><td>Jay</td><td>Roach</td></tr>
+			<tr><td>72723</td><td>William</td><td>Shatner</td></tr>
+			<tr><td colspan="3" style="text-align: center">...</td></tr>
+		</table>
+
+		<table class="sqltable" style="float: left; margin-left: 30px; margin-bottom: 30px">
+			<caption>movies_directors</caption>
+			<tr><th>director_id</th><th>movie_id</th></tr>
+			<tr><td>24758</td><td>112290</td></tr>
+			<tr><td>66965</td><td>209658</td></tr>
+			<tr><td>72723</td><td>313398</td></tr>
+			<tr><td colspan="2" style="text-align: center">...</td></tr>
+		</table>
+	</div>
+</br>
+</p>
+
+
+		</div>
+	<h2 id="part1">Part 1: Relational Algebra</h2> 
+		<div id="intent">
+			<p>
+			This assignment step is intended to strengthen your
+			understanding of Relational Algebra  and MySQL for databases.
+			
+			</p>
+		</div>
+
+
+		<div id="algebra">
+
+			<br/>
+			<p> Recall in class we defined relational algebra for the purpose of creating queries. 
+			Here is a quick summary:
+			
+			</p>
+			<img width="600" src="../../../../bretscher/b20/assignments/a1/relational_table_crop"/><br/>
+			<p>
+			Notice the line in the table <it>Theta Join</it>.  A Theta join is the same as
+			 an inner join with an <code>on condition</code>.  
+		 Write relational queries for each of the following. If it's not possible to write the 
+		 query using our relational algebra, simply say "not possible". You should submit your answers 
+		 in a <strong>PDF</strong> file called <code>algebra.pdf</code>.  You may do so using any editor of your choice 
+		 but you may find it easier to write in LaTeX.  
+		 You may use this <a href="https://www.utsc.utoronto.ca/bretscher/b20assignments/a1/starter.tex">starter file</a> and 
+		 <a href="https://www.overleaf.com/">this online editor</a> to write your LaTex code. 
+		 LaTeX allows for the very easy transcription of mathematical symbols.</p>
+			
+		<ol>
+			<li>The names of the movies with genres comedy. </li>
+			<li>Movie name, first and last names of the actors/actresses  who play a role in a movie with rank at least 8.5. </li>
+			<li>Movie names that had a rank less than 5 and were produced in the 70s  (1970-1979). </li>
+			<li>Last names of actresses (female role) who played a role in as Sci-Fi movie. </li>
+			<li>Directors with more than one movies with rank > 9. </li>
+			<li>Actor/Actress first and last names of actors/actresses who are also directors. </li>
+			<li>The years that Robin Williams had a role in a movie. </li>
+			<li>The actor/actress first and last name, movie title and role for all movies .   </li>
+			<li>The movie names of movies that are in the family genres but not comedies. </li>
+<li> In relational algebra and standard SQL the intersect and difference operators exist. Explain how you can implement each of these operations in MySQL.</li>
+
+		</ol>	
+			
+	<h2 id="part3">Part 2: MySQL - Writing Queries</h2> 
+
+
+		<div id="intent">
+			<p>
+			This assignment step is intended to strengthen your
+			understanding of writing queries in MySQL.
+			
+			</p>
+		</div>
+
+
+		<div id="mysql-queries">
+Write MySQL queries for the movies database for each of the following.  Write your queries 
+in a file, <code>queries.sql</code>.  Your filename must match <strong>exactly</strong>. 
+You should have one query per line so that on the i<sup>th</sup> line you have the query
+ for the i<sup>th</sup> question below. If a query is not possible, then your query should return NULL.		<br/>
+ 
+ <p>Make sure you test your queries first on IMBD_SMALL and then on IMBD.</p>
+			
+		<ol>
+			<li>The genre and number of movies of each genres. </li>
+			<li>The first and last names played by female actors having role 'Wonder Woman'. Display first and last 
+			name as a single column called Name.</li>
+			<li>Movie names that had a rank at least 9.5 and were produced in the last 10 years (2007 and later). </li>
+			<li>Directors and their movie names for movies with name starting with the letter "Zz". </li>
+			//<li>Directors and their movie titles for movies with a rank of 9.5 or better. </li>
+			<li>Actors first and last names as a column Name who play themselves (ie, role is Himself). </li>
+			<li>The Director first and last name and average rank of movies for that director. </li>
+			<li>The Director first and last name with the highest average rank of movies all directors. </li>
+			<li>Create a view called max_roles of all actors/actresses who have had more than 300 roles.</li>
+			<li>Using your view, return the actor/actress first and last name for actor/actress who have played themost roles. </li>
+			<li>All those movie titles that are both comedies and action movies.  <it>Do <strong>NOT</strong> use <code>IN</code></it>. </li>
+			<li>All those movie titles that are both comedies and action movies.  <it><strong>USE</strong>  <code>IN</code></it>. </li>
+			<li>Some directors are actors/actresses too. Find all such director first and last names, the movies they <it>acted</it> in and their roles.   </li>
+			<li> The genre of movie that appears the most in the database.</li>
+			<li>The names of those actors/actresses who had more than one role in the same
+			 movie (like Robin Williams in Mrs. Doubtfire). </li>
+			 <li>The top 25 movie names (hint: look up the <code>limit</code> option).
+	</ol>	
+	
+	
+		</div>
+
+		<h2 id="part3">Part 3: MySQL - Maintaining the Database </h2> 
+		<div id="intent">
+			<p>
+			This assignment step is intended to strengthen your
+			understanding of writing <code>create</code>, <code>update</code> and <code>insert</code> 
+			commands.
+			
+			</p>
+		</div>
+
+		<div id="mysql-updates">
+<p>		We are going to write the code as if we are adding a new table to the database.  
+ 		You can test your code on the <code>imbd_small</code> by importing a copy to your own account.
+ 		Write the following code in a 
+		new file called <code>maintain.sql</code>. Your filename must match <strong>exactly</strong>. 
+You should have one command per line. </p>
+		<ol><li>Create a new table that contains two columns with 
+		the first being a <code>director_id</code> and the second being an average rank rating.   </li>
+		<li>Populate your table by using  insert command(s) and the tables already in the database.</li>
+		<li> Insert a the new movie <a href="http://www.imdb.com/title/tt3470600/?ref_=fn_al_tt_1">Sing</a>
+		 that was just released. Find the appropriate information for our tables from the website.  Note that 
+		 for the actors/actresses just add the stars (top three) listed. Note this will also require updating some tables.
+		<div id="mysql-updates">
+
+
+		<h3>Deliverables</h3>
+			<p>
+				Submit the following files to <a href="https://markus.utsc.utoronto.ca/cscb20w17">MarkUs</a>.
+				<ul>
+					<li><code>algebra.pdf</code></li>
+					<li><code>queries.sql</code></li>
+					<li><code>maintain.sql</code></li>
+				</ul>
+			</p>
+			<strong>Please do not place a solution to this
+				assignment online on a publicly-accessible Web site</strong>;
+			doing so will be considered a violation of the
+			Academic Code of Conduct.
+<br/>
+		</div>
+
+<h4>Good Luck!</h4>
+
+
+		<div id="footer">
+			<p class="license">
+				<span class="w3c">
+				<!--	<a href="../html_validator.php"><img src="img/w3c-xhtml.png" alt="Valid XHTML 1.1" style="border: none;"/></a> 
+					<a href="../css_validator.php"><img src="img/w3c-css.png" alt="Valid CSS!" style="border: none;"/></a>-->
+				</span>
+
+			</p>
+		</div>
+
+</body>
+</html>

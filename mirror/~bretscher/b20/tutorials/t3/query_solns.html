@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1348.17">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; min-height: 14.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #e32400}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">mysql&gt; select * from teaches;</span></p>
+<p class="p1"><span class="s1">+-------+-----------+--------+----------+------+</span></p>
+<p class="p1"><span class="s1">| id<span class="Apple-converted-space">    </span>| course_id | sec_id | semester | year |</span></p>
+<p class="p1"><span class="s1">+-------+-----------+--------+----------+------+</span></p>
+<p class="p1"><span class="s1">| 10101 | CS-101<span class="Apple-converted-space">    </span>| 1<span class="Apple-converted-space">      </span>| Fall <span class="Apple-converted-space">    </span>| 2009 |</span></p>
+<p class="p1"><span class="s1">| 10101 | CS-315<span class="Apple-converted-space">    </span>| 1<span class="Apple-converted-space">      </span>| Spring <span class="Apple-converted-space">  </span>| 2010 |</span></p>
+<p class="p1"><span class="s1">| 10101 | CS-347<span class="Apple-converted-space">    </span>| 1<span class="Apple-converted-space">      </span>| Fall <span class="Apple-converted-space">    </span>| 2009 |</span></p>
+<p class="p1"><span class="s1">| 12121 | FIN-201 <span class="Apple-converted-space">  </span>| 1<span class="Apple-converted-space">      </span>| Spring <span class="Apple-converted-space">  </span>| 2010 |</span></p>
+<p class="p1"><span class="s1">| 15151 | MU-199<span class="Apple-converted-space">    </span>| 1<span class="Apple-converted-space">      </span>| Spring <span class="Apple-converted-space">  </span>| 2010 |</span></p>
+<p class="p1"><span class="s1">| 22222 | PHY-101 <span class="Apple-converted-space">  </span>| 1<span class="Apple-converted-space">      </span>| Fall <span class="Apple-converted-space">    </span>| 2009 |</span></p>
+<p class="p1"><span class="s1">| 32343 | HIS-351 <span class="Apple-converted-space">  </span>| 1<span class="Apple-converted-space">      </span>| Spring <span class="Apple-converted-space">  </span>| 2010 |</span></p>
+<p class="p1"><span class="s1">| 45565 | CS-101<span class="Apple-converted-space">    </span>| 1<span class="Apple-converted-space">      </span>| Spring <span class="Apple-converted-space">  </span>| 2010 |</span></p>
+<p class="p1"><span class="s1">| 45565 | CS-319<span class="Apple-converted-space">    </span>| 1<span class="Apple-converted-space">      </span>| Spring <span class="Apple-converted-space">  </span>| 2010 |</span></p>
+<p class="p1"><span class="s1">| 76766 | BIO-101 <span class="Apple-converted-space">  </span>| 1<span class="Apple-converted-space">      </span>| Summer <span class="Apple-converted-space">  </span>| 2009 |</span></p>
+<p class="p1"><span class="s1">| 76766 | BIO-301 <span class="Apple-converted-space">  </span>| 1<span class="Apple-converted-space">      </span>| Summer <span class="Apple-converted-space">  </span>| 2010 |</span></p>
+<p class="p1"><span class="s1">| 83821 | CS-190<span class="Apple-converted-space">    </span>| 1<span class="Apple-converted-space">      </span>| Spring <span class="Apple-converted-space">  </span>| 2009 |</span></p>
+<p class="p1"><span class="s1">| 83821 | CS-190<span class="Apple-converted-space">    </span>| 2<span class="Apple-converted-space">      </span>| Spring <span class="Apple-converted-space">  </span>| 2009 |</span></p>
+<p class="p1"><span class="s1">| 83821 | CS-319<span class="Apple-converted-space">    </span>| 2<span class="Apple-converted-space">      </span>| Spring <span class="Apple-converted-space">  </span>| 2010 |</span></p>
+<p class="p1"><span class="s1">| 98345 | EE-181<span class="Apple-converted-space">    </span>| 1<span class="Apple-converted-space">      </span>| Spring <span class="Apple-converted-space">  </span>| 2009 |</span></p>
+<p class="p1"><span class="s1">+-------+-----------+--------+----------+------+</span></p>
+<p class="p1"><span class="s1">15 rows in set (0.00 sec)</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">mysql&gt; select id from teaches where semester='Fall' and year=2010;</span></p>
+<p class="p1"><span class="s1">Empty set (0.00 sec)</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">CHANGED YEAR TO 2009 TO MAKE IT MORE INTERESTING</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">mysql&gt; select id from teaches where semester='Fall' and year=2009;</span></p>
+<p class="p1"><span class="s1">+-------+</span></p>
+<p class="p1"><span class="s1">| id<span class="Apple-converted-space">    </span>|</span></p>
+<p class="p1"><span class="s1">+-------+</span></p>
+<p class="p1"><span class="s1">| 10101 |</span></p>
+<p class="p1"><span class="s1">| 10101 |</span></p>
+<p class="p1"><span class="s1">| 22222 |</span></p>
+<p class="p1"><span class="s1">+-------+</span></p>
+<p class="p1"><span class="s1">3 rows in set (0.00 sec)</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">mysql&gt; select name from instructor natural join teaches where semester='Fall' and year = 2009;</span></p>
+<p class="p1"><span class="s1">+------------+</span></p>
+<p class="p1"><span class="s1">| name <span class="Apple-converted-space">      </span>|</span></p>
+<p class="p1"><span class="s1">+------------+</span></p>
+<p class="p1"><span class="s1">| Srinivasan |</span></p>
+<p class="p1"><span class="s1">| Srinivasan |</span></p>
+<p class="p1"><span class="s1">| Einstein <span class="Apple-converted-space">  </span>|</span></p>
+<p class="p1"><span class="s1">+------------+</span></p>
+<p class="p1"><span class="s1">3 rows in set (0.01 sec)</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">mysql&gt; select distinct name from instructor natural join teaches where semester='Fall' and year = 2009;</span></p>
+<p class="p1"><span class="s1">+------------+</span></p>
+<p class="p1"><span class="s1">| name <span class="Apple-converted-space">      </span>|</span></p>
+<p class="p1"><span class="s1">+------------+</span></p>
+<p class="p1"><span class="s1">| Srinivasan |</span></p>
+<p class="p1"><span class="s1">| Einstein <span class="Apple-converted-space">  </span>|</span></p>
+<p class="p1"><span class="s1">+------------+</span></p>
+<p class="p1"><span class="s1">2 rows in set (0.00 sec)</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">mysql&gt; select distinct name from instructor natural join teaches where semester='Fall' and year = 2009 and salary&gt;62000;</span></p>
+<p class="p1"><span class="s1">+------------+</span></p>
+<p class="p1"><span class="s1">| name <span class="Apple-converted-space">      </span>|</span></p>
+<p class="p1"><span class="s1">+------------+</span></p>
+<p class="p1"><span class="s1">| Srinivasan |</span></p>
+<p class="p1"><span class="s1">| Einstein <span class="Apple-converted-space">  </span>|</span></p>
+<p class="p1"><span class="s1">+------------+</span></p>
+<p class="p1"><span class="s1">2 rows in set (0.00 sec)</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">mysql&gt; select * from instructor;</span></p>
+<p class="p1"><span class="s1">+-------+------------+------------+----------+</span></p>
+<p class="p1"><span class="s1">| id<span class="Apple-converted-space">    </span>| name <span class="Apple-converted-space">      </span>| dept_name<span class="Apple-converted-space">  </span>| salary <span class="Apple-converted-space">  </span>|</span></p>
+<p class="p1"><span class="s1">+-------+------------+------------+----------+</span></p>
+<p class="p1"><span class="s1">| 10101 | Srinivasan | Comp. Sci. | 65000.00 |</span></p>
+<p class="p1"><span class="s1">| 12121 | Wu <span class="Apple-converted-space">        </span>| Finance<span class="Apple-converted-space">    </span>| 90000.00 |</span></p>
+<p class="p1"><span class="s1">| 15151 | Mozart <span class="Apple-converted-space">    </span>| Music<span class="Apple-converted-space">      </span>| 40000.00 |</span></p>
+<p class="p1"><span class="s1">| 22222 | Einstein <span class="Apple-converted-space">  </span>| Physics<span class="Apple-converted-space">    </span>| 95000.00 |</span></p>
+<p class="p1"><span class="s1">| 32343 | El Said<span class="Apple-converted-space">    </span>| History<span class="Apple-converted-space">    </span>| 60000.00 |</span></p>
+<p class="p1"><span class="s1">| 33456 | Gold <span class="Apple-converted-space">      </span>| Physics<span class="Apple-converted-space">    </span>| 87000.00 |</span></p>
+<p class="p1"><span class="s1">| 45565 | Katz <span class="Apple-converted-space">      </span>| Comp. Sci. | 75000.00 |</span></p>
+<p class="p1"><span class="s1">| 58583 | Califieri<span class="Apple-converted-space">  </span>| History<span class="Apple-converted-space">    </span>| 62000.00 |</span></p>
+<p class="p1"><span class="s1">| 76543 | Singh<span class="Apple-converted-space">      </span>| Finance<span class="Apple-converted-space">    </span>| 80000.00 |</span></p>
+<p class="p1"><span class="s1">| 76766 | Crick<span class="Apple-converted-space">      </span>| Biology<span class="Apple-converted-space">    </span>| 72000.00 |</span></p>
+<p class="p1"><span class="s1">| 83821 | Brandt <span class="Apple-converted-space">    </span>| Comp. Sci. | 92000.00 |</span></p>
+<p class="p1"><span class="s1">| 98345 | Kim<span class="Apple-converted-space">        </span>| Elec. Eng. | 80000.00 |</span></p>
+<p class="p1"><span class="s1">+-------+------------+------------+----------+</span></p>
+<p class="p1"><span class="s1">12 rows in set (0.00 sec)</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">mysql&gt; select a.course_id, b.course_id from prereq a join prereq b on a.course_id!=b.course_id and a.prereq_id = b.prereq_id;</span></p>
+<p class="p1"><span class="s1">+-----------+-----------+</span></p>
+<p class="p1"><span class="s1">| course_id | course_id |</span></p>
+<p class="p1"><span class="s1">+-----------+-----------+</span></p>
+<p class="p1"><span class="s1">| BIO-399 <span class="Apple-converted-space">  </span>| BIO-301 <span class="Apple-converted-space">  </span>|</span></p>
+<p class="p1"><span class="s1">| BIO-301 <span class="Apple-converted-space">  </span>| BIO-399 <span class="Apple-converted-space">  </span>|</span></p>
+<p class="p1"><span class="s1">| CS-315<span class="Apple-converted-space">    </span>| CS-190<span class="Apple-converted-space">    </span>|</span></p>
+<p class="p1"><span class="s1">| CS-319<span class="Apple-converted-space">    </span>| CS-190<span class="Apple-converted-space">    </span>|</span></p>
+<p class="p1"><span class="s1">| CS-347<span class="Apple-converted-space">    </span>| CS-190<span class="Apple-converted-space">    </span>|</span></p>
+<p class="p1"><span class="s1">| CS-190<span class="Apple-converted-space">    </span>| CS-315<span class="Apple-converted-space">    </span>|</span></p>
+<p class="p1"><span class="s1">| CS-319<span class="Apple-converted-space">    </span>| CS-315<span class="Apple-converted-space">    </span>|</span></p>
+<p class="p1"><span class="s1">| CS-347<span class="Apple-converted-space">    </span>| CS-315<span class="Apple-converted-space">    </span>|</span></p>
+<p class="p1"><span class="s1">| CS-190<span class="Apple-converted-space">    </span>| CS-319<span class="Apple-converted-space">    </span>|</span></p>
+<p class="p1"><span class="s1">| CS-315<span class="Apple-converted-space">    </span>| CS-319<span class="Apple-converted-space">    </span>|</span></p>
+<p class="p1"><span class="s1">| CS-347<span class="Apple-converted-space">    </span>| CS-319<span class="Apple-converted-space">    </span>|</span></p>
+<p class="p1"><span class="s1">| CS-190<span class="Apple-converted-space">    </span>| CS-347<span class="Apple-converted-space">    </span>|</span></p>
+<p class="p1"><span class="s1">| CS-315<span class="Apple-converted-space">    </span>| CS-347<span class="Apple-converted-space">    </span>|</span></p>
+<p class="p1"><span class="s1">| CS-319<span class="Apple-converted-space">    </span>| CS-347<span class="Apple-converted-space">    </span>|</span></p>
+<p class="p1"><span class="s1">+-----------+-----------+</span></p>
+<p class="p1"><span class="s1">14 rows in set (0.01 sec)</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">mysql&gt; select count(course_id) from course where dept_name =<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>-&gt; 'Biology';</span></p>
+<p class="p1"><span class="s1">+------------------+</span></p>
+<p class="p1"><span class="s1">| count(course_id) |</span></p>
+<p class="p1"><span class="s1">+------------------+</span></p>
+<p class="p1"><span class="s1">|<span class="Apple-converted-space">                </span>3 |</span></p>
+<p class="p1"><span class="s1">+------------------+</span></p>
+<p class="p1"><span class="s1">1 row in set (0.00 sec)</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">mysql&gt; select name, title from instructor natural join teaches natural join course;</span></p>
+<p class="p1"><span class="s1">+------------+----------------------------+</span></p>
+<p class="p1"><span class="s1">| name <span class="Apple-converted-space">      </span>| title<span class="Apple-converted-space">                      </span>|</span></p>
+<p class="p1"><span class="s1">+------------+----------------------------+</span></p>
+<p class="p1"><span class="s1">| Srinivasan | Intro. to Computer Science |</span></p>
+<p class="p1"><span class="s1">| Srinivasan | Robotics <span class="Apple-converted-space">                  </span>|</span></p>
+<p class="p1"><span class="s1">| Srinivasan | Database System Concepts <span class="Apple-converted-space">  </span>|</span></p>
+<p class="p1"><span class="s1">| Wu <span class="Apple-converted-space">        </span>| Investment Banking <span class="Apple-converted-space">        </span>|</span></p>
+<p class="p1"><span class="s1">| Mozart <span class="Apple-converted-space">    </span>| Music Video Production <span class="Apple-converted-space">    </span>|</span></p>
+<p class="p1"><span class="s1">| Einstein <span class="Apple-converted-space">  </span>| Physical Principles<span class="Apple-converted-space">        </span>|</span></p>
+<p class="p1"><span class="s1">| El Said<span class="Apple-converted-space">    </span>| World History<span class="Apple-converted-space">              </span>|</span></p>
+<p class="p1"><span class="s1">| Katz <span class="Apple-converted-space">      </span>| Intro. to Computer Science |</span></p>
+<p class="p1"><span class="s1">| Katz <span class="Apple-converted-space">      </span>| Image Processing <span class="Apple-converted-space">          </span>|</span></p>
+<p class="p1"><span class="s1">| Crick<span class="Apple-converted-space">      </span>| Intro. to Biology<span class="Apple-converted-space">          </span>|</span></p>
+<p class="p1"><span class="s1">| Crick<span class="Apple-converted-space">      </span>| Genetics <span class="Apple-converted-space">                  </span>|</span></p>
+<p class="p1"><span class="s1">| Brandt <span class="Apple-converted-space">    </span>| Game Design<span class="Apple-converted-space">                </span>|</span></p>
+<p class="p1"><span class="s1">| Brandt <span class="Apple-converted-space">    </span>| Game Design<span class="Apple-converted-space">                </span>|</span></p>
+<p class="p1"><span class="s1">| Brandt <span class="Apple-converted-space">    </span>| Image Processing <span class="Apple-converted-space">          </span>|</span></p>
+<p class="p1"><span class="s1">| Kim<span class="Apple-converted-space">        </span>| Intro. to Digital Systems<span class="Apple-converted-space">  </span>|</span></p>
+<p class="p1"><span class="s1">+------------+----------------------------+</span></p>
+<p class="p1"><span class="s1">15 rows in set (0.00 sec)</span></p>
+</body>
+</html>

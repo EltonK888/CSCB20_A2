@@ -1,0 +1,161 @@
+Total marks 100:
+
+  HTML: 17 marks
+   (2)  header comment including student name, course code/title,
+	assignment description, and summary of file content (need
+	only be present in one place, e.g. top.html)
+
+   (2) 	table properly used to display DB-query exam results, including
+	column headings 
+
+   (5) 	form used to collect user-input course name values,
+	with “search” button and select menu.
+	Proper "method" and "action" attributes, the latter pointing 
+	at "search.php".  Hidden fields used to convey at least the
+	course-id for the course chosen from the select menu.
+	  Form should either use HTML5 fieldset and legend
+	for border and labeling or proper CSS instead.
+
+
+   (4) 	no use of style tags and minimal/no use of inline-style attributes
+
+   (2) 	proper indenting for readability using whitespace block elements
+	should begin on new lines reasonable line-length - no block element
+	begins after column 100
+
+
+   (2) 	static (non-PHP-generated) HTML properly validates 
+
+
+  CSS: 12 marks
+   (2)  header comment including student name, course code/title, assignment
+	description, and summary of file content.
+
+	inline comments to describe any significant style definitions or
+	tricky bits
+
+   (5)	conciseness and avoidance of duplication - style descriptions should
+	not be repeated; instead, class or id attributes or context selectors
+	should be used to associate the common style with multiple elements.
+	
+	uses context selectors where possible rather than proliferating
+	"id" and/or "class" attributes
+
+        take advantage of inheritance, so that when a style property applies to
+	many page elements, you specify it only once, and that specification is
+	inherited by all the other elements that use it
+
+   (2) 	main panel, table, form centred and not full screen width
+
+   (1) 	page background color different than main panel background color
+
+   (1) 	header and footer banners use common colour scheme
+
+   (1) 	CSS properly validates
+
+
+  PHP: 35 marks
+   (10) correct behavior
+        no error messages are generated and page loads successfully when run
+	with valid user parameter values (no need to handle invalid parameter
+	values)
+
+        paths to resources are properly set so that images, and CSS load properly.
+
+        user-entered course name (fragments) correctly filters course
+	results to proper select-option list of matching course, lecture, sections 
+	(and ids).
+
+        user-choice of select option results in proper search query that
+	returns a new Web page with a table for the exam for the user-selected
+	course.  
+
+	table format includes all columns in assignment specification, including headings,
+	and column contents
+
+  
+   (4)  exams.php
+        (2) user-entered course name (fragments) used correctly with 
+	    SQL query to select proper list of matching course rows
+
+	(1) proper encoding of SQL results as JSON value
+
+	(1) correct testing for case of no courses matching user input
+	    course name and signals this by returning an HTTP 404 header
+
+   (2) 	search.php
+	(2) course exam description is accurately displayed.
+
+	
+   (7)  code quality - all php files
+      	(4) avoidance of "print" and "echo" when generating HTML output
+	    - instead code should switch from PHP to HTML mode for output.
+
+	(3) no code duplication between courses.php and search.php files;
+	    should use "include" of top.html and bottom.html to single-source
+	    overlapping code 
+      
+   (8)  readability - all php files:
+	(2) header comment including student name, course code/title,
+	    assignment description, and summary of file content
+
+	(3) reasonable level of commenting in code body including at least
+	    one comment for each function (where applicable) and each major
+	    code section, as well as any tricky bits
+
+  	(1) reasonable line-length (less than 100 char's)
+
+        (2) use of meaningful variable and function names
+
+   (2) use of try/catch block for sql query - shown in tutorial w11.
+
+
+   (2) use of PHP "include" to: retrieve DB name and credentials from
+       separate config.php file
+
+
+  JavaScript/jQuery: 30 marks
+   (10)  correct behaviour:
+	intercepts submit event, issues Ajax request to exams.php,
+	transforms JSON result into <select> options list, responds
+	to select "change" event by submitting form to search.php,
+	clears options between user inputs (so that options do not
+	accumulate from one query to next), displays a visible message
+	in response to error code from exams.php preferably on the
+	search form or close to it
+
+   (1) 	uses form fields to submit values to search.php rather than
+	directly appending parameters to URL 
+
+   (2) 	few/no style settings set directly by JS; instead use of CSS
+	classes/rules to apply style
+
+   (2) 	clean processing of JSON response from exams.php using each()
+
+   
+   (12) readability and structure:
+	(2) good code organization/structure - preferably the ready
+	    block should contain just two event-handler definitions
+	    for "submit" and "change" events
+
+	(3) use of function definitions to modularize code
+
+	(2) all JS/jQuery should be packaged in myexams.js; there should
+	    be no embedded JS/jQuery in HTML files
+
+  	(3) reasonable level of commenting in code body, including at
+	    least one comment for each function and each major code
+	    section as well as any tricky code fragments, header comment
+	    including student name, course code/title, assignment
+	    description, and summary of file content
+
+  	(2) use of meaningful variable and function names
+
+
+  SQL: 6 marks
+	(2) correct and well-organized queries without redundant parts
+
+	(2) comments explain what query is retrieving
+
+	(2) all query-filtering performed by SQL (none by PHP)
+

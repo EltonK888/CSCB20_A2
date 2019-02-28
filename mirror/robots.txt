@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /webtest/
+Disallow: /~webtest/
+Disallow: /*employment?qt-*
+Disallow: /*equipment-standards?qt-*
+Disallow: /csms/
+Disallow: /~csms/
+Disallow: /~facilities/foodbevservices/documents/
+Disallow: /digitalscholarship/	
+Disallow: /~registrar/calendars/calendar1*/
+Disallow: /~registrar/calendars/calendar0*/

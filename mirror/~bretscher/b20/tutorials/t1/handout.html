@@ -1,0 +1,343 @@
+<!DOCTYPE div PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+   <head>
+     <base href=""/>
+     <link rel="stylesheet" type="text/css" href="https://www.utsc.utoronto.ca/bretscher/b20/b20.css"/>
+     <link rel="shortcut icon" href="https://www.utsc.utoronto.ca/bretscher/b20/tutorials/myico.ico" />
+     <meta http-equiv="Cache-Control" content="no-cache, no-store"/>
+    <style type="text/css">
+      code, pre { font-weight: bold; font-size: 120% }
+      div.sol { border: 1px dashed #094661; background-color: #B2DBED; padding: 0.5em; margin: 1em 0em; }
+      div.note { border: 1px dashed #094661; background-color: #EDDBED; padding: 0.5em; margin: 1em 0em; }
+      div.sol { display: none; border: 1px dashed #094661; background-color: #B2DBED; padding: 0.5em; margin: 1em 0em; }
+      div.sol, div.note { display: none; }
+    </style>
+
+<!--
+     <style type="text/css">
+             tr.r0 td ul, tr.r0-last td ul, tr.r1 td ul, tr.r1-last td ul 
+                                { text-align: left;
+                                vertical-align: middle;
+                                }
+             li { margin: 0.5em }                       
+     </style>
+-->
+   </head>
+   <body>
+     <div class="title">Tutorial 1 Handout</div>
+
+<h3>Variables</h3>
+The values in the expressions that we are working with
+often have more meaning than the numbers alone reveal.
+For example, the expression
+<pre>
+0.5 * 10 * 5
+</pre>
+might be the area of a triangle, where the value 10 is the
+base and 5 is the height.
+To associate a name with those values, we use variables.
+The general form of an assignment statement is
+<pre>
+variable = expression
+</pre>
+Assign the value 10 to a variable named base and
+the value 5 to a variable height.
+Now rewrite the expression
+<pre>0.5 * 10 * 5</pre>
+so that it uses variables base and height.
+Next, assign the expression to a variable named area.
+Reassign variables base and height the
+values 12 and 17, respectively. What is the value of area now?
+Type area and the return key to see area's value.
+Verify the current variable values by typing each
+variable in the shell followed by the return key.
+Now recalculate the area (using the new values of the variables)
+and check it's value.
+
+<h3>Functions and Modules</h3>
+In the previous section, we calculated the area of a triangle.
+Let's define a function, called calculate_area,
+so that we can reuse the code we wrote.
+The general form of a function is:
+<pre>
+def function_name(parameters):
+    body
+</pre>
+In the editor section of Wing, define a function calculate_area,
+parameters: triangle_base and triangle_height
+(note:any legal variable names would do,
+but it's best to choose something meaningful).
+<p>
+The function should calculate the triangle's area
+(recall area = 0.5*base*height) for the given base
+and height, and return the area.
+Save the file: File -> Save. A dialog box will appear.
+In the text field labelled File name: replace
+<code>untitled-1.py</code> with <code>triangle.py</code>.
+In the Save in: drop down menu, select your own directory:
+the line that starts iwth your user id
+and continues with 'on CCentre Student Server...'.
+Create a new folder called cscb20s.
+Open cscb20s, and create a folder LabPractice. Open LabPractice.
+Click the Run button. In the shell, call the function as follows:
+<pre>
+calculate_area(10, 12)
+calculate_area(3.4, 5.2)
+calculate_area(base, height)
+</pre>
+
+<h3>Explore Module <code>math</code> using
+	<code>dir</code> and <code>help</code></h3>
+Complete the tasks below using functions from Python's math module.
+Use <code>dir(math)</code> to find out which
+functions math contains and use <code>help(math.function)</code>
+(where function is replaced by the name of a function from math)
+to find out more about a particular function.
+To see detailed information about all math
+functions, call <code>help(math)</code>.
+In the shell, import math and write code to do the following:
+<ol style="list-style-type:lower-alpha">
+	<li>Calculate 2 * pi.
+	<li>Take the floor and ceiling of 56.4.
+	<li>Calculate the square root of the logarithm of 244.
+	<li>Calculate the base 2 logarithm of 256.
+</ol>
+<h3>Manipulating type <code>str</code></h3>
+The Python type <code>str</code> stands for string.
+A string is a sequence of characters. We can iterate over (walk through)
+a str in a loop and examine each character.
+In the Python shell, do the following:
+Assign the string "superconductivity" to a variable s.
+(If your fingers are up to it, you may use
+the string "supercalifragilisticexpialidocious".)
+For the following print statements, recall that "+"
+combines strings (concatenates them), and "," can be used
+to separate items in a print statement.
+<ol style="list-style-type:lower-alpha">
+	<li>Write a loop that prints each character in s on a separate line.
+	<li>Write a loop that prints each character in s on the same line
+	with a space after each character.
+	Notice where the <code>>>></code> prompt appears.
+	<li>Write a loop that prints each character in s on the same line,
+	with a space and a comma after
+	each character: s , u , p , e , r , c , etc.
+	<li>Write a loop similar to the previous but without
+	a space between each character and the comma
+	that follows it: s, u, p, e, r, c, etc.
+	Notice that there is a comma after the last character.
+	We won't worry about this now.
+</ol>
+
+<h3>Using <code>str</code> Methods</h3>
+Methods act much like functions.
+The only difference is that a method is a function that belong to specific
+data types and is designed to make use of the specific value it is `called on'. For example, <code>'abc'.upper()</code>,
+a str method, uses the value 'abc' to return its uppercase equivalent,
+'ABC'. What methods a value has depends on its type:
+'abc' has a method upper() because 'abc' is a str.
+Explore the str methods using dir and help,
+and use them to complete the tasks below.
+Create strings in the Python shell and do the
+following:
+<ol style="list-style-type:lower-alpha">
+	<li>Check whether or not a string ends with the letter "h".
+	<li>Check whether or not a string contains only numbers.
+	<li>Replace every instance of the character "l" (ell ) in
+	a string with a "1" (the number one).
+	<li>Given a string composed only of numbers,
+	pad it with zeros so that it is exactly 6 digits long.
+	<li>Check whether or not a string contains only lowercase letters.
+	<li>Remove all leading zeroes from a string composed only of numbers.
+</ol>
+
+<h3>Functions involving strings</h3>
+This section asks you to write the code for the
+functions specified in the table below. First, a word about
+correctness:
+Function correctness:
+Before you start writing any of the code for the functions,
+you need to think about how you will make sure your code is correct.
+You have to know in your own mind, for every function,
+what the expected output (or return value) is for all possible values
+of the parameter. That way, after you've written your functions, you
+can check if they work as you expect.
+<p>
+In most cases, you can't list every possible argument value and outcome.
+You have to limit your prediction and checking to a relatively small
+set of values, so that you can do your testing in a reasonable amount of time.
+The best way to do this is to pick some situations that are representative
+of others, and also to introduce both "usual" and "unusual" situations.
+For example, predicting what your function will do with the empty string ''
+as a parameter, is an unusual test case,
+since this situation is often unspecified in the function docstring.
+A representative test case might be the string 'e' (or 'K')
+standing for all single-character strings.
+
+<h4>string Function Specifications:</h4>
+For this section, do not use any of Python's str methods.
+However, you may use <code>__builtins__</code> functions:
+<ul>
+	<li><code>longer(str, str)</code> Given two strings,
+	return the length of the longer string.
+	<li><code>earlier(str, str)</code> Given two strings made
+	up of lowercase letters, return the string that
+	would appear earlier in the dictionary.
+	<li><code>count_letter(str, str)</code> Given a string and a single-character string, count all occurrences
+of the second string in the first and return the count.
+	<li><code>remove_digits(str)</code> Return a new string that is the same as the given string, but with digits removed.
+	<li><code>repeat_character(str, str)</code> Given a string and a single-character string, return a string consisting of
+the second, single character string repeated as many of times as it appears
+in the first string.
+	<li><code>where(str, str)</code> Given a string and a single-character string, return the index of the first occurrence
+		of the second string in the first. For example, <code>where("abc", "b")</code> should
+return 1. If the second string is not in the first, return -1.
+</ul>
+
+<h3>Lists</h3>
+In this section, you will write short functions or statements
+that involve lists. In some of the exercises,
+you will be expected to use list methods so that you can become
+familiar with the tools available to you.
+<p>
+Remember to use the Python functions dir and help to get
+information about methods.
+<p>
+Do you remember how to slice strings?
+We can do the same thing with lists.
+If we have a list
+<pre>
+names = ['Bob', 'Ho', 'Zahara', 'Amitabha', 'Dov', 'Maria']
+</pre>
+then <code>names[1:4]</code> returns a new list equal to
+<pre>
+['Ho', 'Zahara', 'Amitabha']
+</pre>
+There are several list methods that you may find helpful:
+<code>append, count, extend, index, insert, pop,
+	remove, reverse, sort</code>. Use help to learn more about them.
+<ol>
+	<li>Type this assignment statement into the Python shell:
+	<pre>
+names = ['Bob', 'Ho', 'Zahara', 'Amitabha', 'Dov', 'Maria']
+	</pre>
+For the following steps, use names and slice notation:
+<ol style="list-style-type:lower-alpha">
+	<li>Write an expression that produces this new list: ['Zahara', 'Amitabha', 'Dov']
+	<li>Write an expression that produces this new list: ['Bob']
+	<li>Write an expression that produces this new list: ['Amitabha', Dov', 'Maria']
+</ol>
+<li>Given a list L and a value v, using list methods (not a loop),write an expression that removes the first occurrence of v from L.
+<li>Write an expression that adds the string "How are you?" to the front of the list ["I am fine, thank you"].
+<li>Write code that turns [2, 4, 99, 0, -3.5, 86.9, -101] into [99, 86.9, 4, 2, 0, -3.5, -101].
+You should use just two method calls. (See if you can do the transformation in one statement! 
+<li>Write a function every_third that takes a list as a parameter and returns a new list that contains
+every third element of the original list, starting at index 0. Do not use slice notation.
+<li>Write a function every_ith that takes a list L and an integer i as parameters and returns a list
+consisting of every ith element of L, starting at index 0. Don't use slice notation.
+</ol>
+
+<h3><code>while</code> loops</h3>
+Use while loops to complete the following functions. (Do not use for loops.)
+Verify your work. As always,
+we give the type of the parameter in parentheses.
+Do not actually use list as the name of a parameter or variable.
+<dl>
+	<dt><code>display_list(list)</code></dt>
+	<dd>Print the elements of the given list.</dd>
+	<dt><code>display_list_even(list)</code></dt>
+	<dd>Print the elements of the given list that occur at even indices.</dd>
+	<dt><code>display_list_reverse(list)</code></dt>
+	<dd>Print the elements of the given list from the end of the list to the front.</dd>
+	<dt><code>sum_elements(list)</code></dt>
+	<dd>Sum the elements of the given list of ints, starting from the front of list,
+until the total is over 100 or the end of the list is reached, and return the
+sum at that point (as an int).</dd>
+<dt><code>duplicates(list)</code></dt>
+<dd>Return True if the given list contains adjacent elements with the same
+value, and return False otherwise.</dd>
+</dl>
+
+<h3>Nested Lists</h3>
+List elements may be lists themselves. When this happens it is called a nested list or a list of lists:
+<pre>
+pets = [["Shoji", "cat", 18], ["Hanako", "dog", 15], ["Sir Toby", "cat", 10],
+["Sachiko", "cat", 7], ["Sasha", "dog", 3], ["Lopez", "dog", 13]]
+</pre>
+We can access each element of list pets using its index:
+<pre>
+>>> pets[3]
+["Sachiko", "cat", 7]
+</pre>
+We can access each element of list pets using its index:
+We can also access elements of the inner lists. For example, since pets[3] refers to a list, we can use pets[3]
+to access the element at position 2:
+<pre>
+>>> pets[3][2]
+7
+</pre>
+This is saying that element 2 of element 3 of the list pets (the age of the cat named \Sachiko") is 7.
+<p>
+Write the following loops and functions and call each function to verify your work. You may use for loops.
+<ol>
+	<li>Write a loop that prints each list from list pets on a separate line.
+	<li>Write a loop that prints the second element of each inner list in list pets on a separate line.
+	<li>Write a loop that examines list pets and computes the number of dogs in the list.
+	<li>Write a loop that examines list pets and computes the sum of the ages of the animals in the list. Ages
+are the third element of the inner lists.
+	<li>Write a function nested_lengths that takes a list L as a parameter and returns a list of the lengths
+of the sublists. More formally: for each element e in L, the returned list contains a corresponding
+element, c, that represents the number of elements in e.
+</ol>
+
+<h3>Text Files: the Basics</h3>
+In this section, you will practice opening, reading, and writing text files.
+Use dir and help to get information on file methods provided by Python.
+Before you begin, download the text file
+<a href="../../../../bretscher/b20/tutorials/t1/data.txt">data.txt</a> and starter code file
+basics.py from the Labs section of the course website on the intranet.
+Open <a href="../../../../bretscher/b20/tutorials/t1/file_basics.txt">file_basics.py</a> in Wing and implement
+the three functions according to their docstring descriptions.
+
+<pre>
+# Instead of using the terms "url" or "file", we use the more general
+# term "reader" to indicate an open file or webpage.
+
+def display_lines(r):
+    '''Display the lines of the file/webpage (with leading and trailing
+    whitespace removed) from open reader r.'''
+
+def display_lines_with_text(r, text):
+    '''Display the lines of the file/webpage (with leading and trailing
+    whitespace removed) from open reader r that contain the str text.'''
+
+def copy_file(r):
+    '''Write the lines of open reader r to the file copy.txt.'''
+    
+if __name__ == '__main__':
+
+    data_file = open('data.txt')
+    display_lines(data_file)
+    data_file.close()
+
+    data_file = open('data.txt')
+    display_lines_with_text(data_file, 'ene')
+    data_file.close()
+
+    data_file = open('data.txt')
+    copy_file(data_file)
+    data_file.close()
+</pre>
+
+<div class="note">
+	Obviously need to just do a quick walkthrough of the above
+	sequence - e.g. pick one item in each section.  Plan to demo
+	Wing in the process.  Check that PO101 actually has Wing.
+	<p>
+	May want to expand the file coverage, since that is the
+	most germane for this course.
+</div>
+
+<br/> <br/>
+</body>
+</html>

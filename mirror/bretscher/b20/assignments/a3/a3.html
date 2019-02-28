@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+                <link rel="stylesheet" type="text/css" href="../../../../~bretscher/b20/assignments/a3/a3.css"/>
+			<link rel="stylesheet" type="text/css" href="../../../../~bretscher/b20/assignments/a3/style.css"/>
+
+		<title>CSCB20 Assignment 3: Exam Timetable Website</title>
+	</head>
+
+	<body>
+		<h1>CSCB20 Assignment 3: Exam Timetable Website</h1>
+
+		<div id="description">
+			<p>
+Your task for this assignment is to write the HTML,
+			CSS, JavaScript and PHP code for a Web app  that accesses a final exam timetable database site.
+			Your app will show the exam time for a user-chosen
+			course  and alternatively (for a higher mark), an extension to this web app.
+			</p>
+<p>
+				<img src="../../../../~bretscher/b20/assignments/a3/img/final_php.png" alt="final.php top-level page" style="vertical-align: top"> <img class="split" src="../../../../~bretscher/b20/assignments/a3/img/course_select.png" alt="expected output search.php" style="vertical-align: top">
+				<img src="../../../../~bretscher/b20/assignments/a3/img/timetable.png" alt="expected output search.php" style="vertical-align: top">
+</p>
+
+
+			
+			<p>
+			File <a href="../../../../~bretscher/b20/assignments/a3/starter.txt">starter.php</a>,
+			an incomplete starter version of
+			your app's initial page courses.php,
+			is provided to help get you started.
+			</p>
+
+			<p>
+			</p>
+
+			<p>
+			Both the front page <code>courses.php</code> and the
+			search page <code>search.php</code> have a form
+			into which the user can type a partial (or complete) course number (for example <code>CSC</code> or 
+			<code>matha</code>. When the "search" button is clicked, an HTML select
+		       	input will be populated with all matching course names, sections and instructors 
+			in the DB (rightmost image).  When the user selects one of these options, search.php is invoked to find 
+			the exam date, start and end times and location. The result returned
+			by search.php is displayed in the browser window
+			(bottom screenshot above).
+			</p>
+			<p>
+			As the last assignment for the course, one of its
+			themes is to tie together much of the material you
+			have learned.  You will write some HTML and CSS,
+			and a larger amount of JavaScript, PHP, and SQL code.
+			</p>
+			
+			<p>The required styling of these pages are very basic as shown in the images above. You are welcome 
+			to add more style to personalize and make the page look better.  It is recommended you get all the 
+			functionality working first and then stylize.
+			<p>
+
+<h2>File submission</h2>
+
+Submit the following files to MarkUs.
+			
+			<ul>
+				<li><code>courses.php</code>, the entry page (starter code provided)</li>
+				<li><code>search.php</code>, the search results page</li>
+				<li><code>exams.php</code>, Web service to match course names</li>
+				<li><code>top.html</code>, any HTML common to the top of both <code>courses.php</code> and <code>search.php</code> pages</li>
+				<li><code>bottom.html</code>, any HTML common to the bottom of both <code>courses.php</code> and <code>search.php</code> pages</li>
+				<li><code>exams.css</code>, CSS styles for both <code>courses.php</code> and <code>search.php</code> pages</li>
+				<li><code>myexams.js</code>, JavaScript code for both <code>courses.php</code> and <code>search.php</code> pages</li>
+			</ul>
+
+		</div>
+
+
+		<div id="appearance" class="pagestart">
+			<h2>Appearance Constraints (both <code>courses.php</code> and <code>search.php</code> pages):</h2>
+
+			<p> In order to earn a maximum of 80% your  <code>courses.php</code> and
+			<code>search.php</code> must both
+			match the appearance criteria enumerated below.
+			Beyond these constraints,
+			any other aspects of the page are up to you.
+			Please link to any images on your page using
+			absolute paths, not relative paths, since relative
+			paths will likely break when the marker loads
+			your code.  
+			</p>
+			
+			<ul>
+				<li>Both of your pages must contain the
+				the starter code content. Though
+				you may apply whatever CSS you want that
+				does not conflict with the rest of these
+				requirements.
+				<li>Do not modify the form query parameter names as described below (course, lastname, instructor_id, <!--instructor_name,--> kevin).
+			<li>The same title, and links to the same CSS and JavaScript resources.</li>
+				
+			
+				
+			<li>
+			The main section of content must be a centered area that is narrower than the overall page body. This main section should have a different background color than the overall body behind it, to make it stand out.
+			</li>
+			<li>Every page should have a descriptive HTML level-1 heading, explaining the contents of the page.</li>
+			<li>If you, like you may add a UTSC or U of T logo. </li>
+			<li>
+			The app should use a consistent color and font
+			scheme throughout. Your CSS should be structured
+			such that it is easy to change the color/font
+			scheme by modifying colors and fonts in a single
+			place in the CSS file.
+			</li>
+
+			<li>
+			All content should have reasonable sizing, padding,
+			and margins such that it does not awkwardly bump
+			into other content on the page. Content should
+			also be aligned in reasonable ways for easy viewing.
+			</li>
+
+			<li>A form to type a course number
+			and search for matching courses in the database.</li>
+				
+			<li>  Be creative!
+			In <code>search.php</code> this area contains 
+			the exams time table results as described above.</li>
+				
+			<li>
+			Query results should be shown in tables with
+			captions describing the tables, and headings
+			describing each column. The rows of the table
+			should alternate in background color, also called
+			"zebra striping." Borders
+			should be collapsed.
+			</li>
+			</ul>
+
+			<p>
+			Beyond these constraints (and any other appearance
+			constraints listed in the sections below),
+			all other aspects of the page are left to you
+			to design, so feel free to be creative!
+			Any images should be uploaded to your
+			mathlab Web area. All images should be linked
+			using absolute URLs, not relative URLs.
+			</p>
+
+			<p>
+			NOTE: With so much in common between the two pages,
+			it is important to find ways to avoid redundancy.
+			You should use the PHP <a
+			href="http://www.php.net/include"><code>include</code></a>
+			function with shared common files <code>top.html</code>
+			and <code>bottom.html</code> included by both pages,
+			to finstructor out all redundant HTML code,
+			as well as any PHP functions that you call in
+			both PHP files.
+			</p>
+		</div>
+		
+
+		<div>
+			<h2>Front Page, <code>courses.php</code> and common search form:</h2>
+
+			<p>
+			The initial page, <code>courses.php</code>, contains
+			 the common search
+			form (which appears on both pages) that allows the
+			user to search for a course. The form must contain at least one text box and a 
+			drop down select menu to choose from a list of matching courses.
+			</p>
+			
+			<p>
+			The end goal is to submit
+			 this form to 
+			<code>search.php</code>,
+			to show exam results for the course. However,
+			before this form is submitted you will need to
+			convert the (possibly partial) course name  the
+			user entered into a unique known course.  It is
+			possible that the name the user types (such as
+			"CSC") will match many courses even multiple sections of the same course
+			or that the name will match no one at all in the
+			database. As such we will need a way of figuring
+			out which unique course in the database (if any)
+			the user is referring to.
+			</p>
+
+			<p>
+			To address this problem, when the user clicks
+			the "search" button on the
+			the form in <code>courses.php</code> JavaScript
+			on your page will forward the
+			user-entered (partial)
+			course name, to a Web service
+			called <code>exams.php</code>.
+
+			<p>
+			The <code>exams.php</code> Web
+			service will give you search results
+			for whatever (partial or complete) course name the user enters. The full behavior of
+			this Web service is described in the next section,
+			but it returns a JSON-format array 
+			containing the course name, section, instructor and unique
+			id of all matching course(s) in the database.
+			</p>
+
+			<p>
+			This means when the user clicks the "search" button,
+			you will intercept the form submission in order
+			to contact the <code>exams.php</code> Web service
+			(using an Ajax request) to obtain a list of
+			courses(s) (if any) that matches the
+			course name entered.  When you have received
+			JSON information back from <code>exams.php</code>,
+			you will display this as an HTML select menu (rightmost image above).
+			Once the user chooses an entry from this select
+			menu, you then invoke search.php with the unambiguous (hidden) course
+			id corresponding to the course chosen by the user.
+			</p>
+
+			<p>
+			The information flow for searches is roughly the following:
+			<ol>
+				<li><code>courses.php</code>: User types a course name (or substrings of) into the form and clicks the "search" button.</li>
+				<li><code>myexams.js</code>: JavaScript code intercepts the click event, and initiates an Ajax request to look up the course id, course name, section and instructor
+				 for the entered name.</li>
+				<li><code>exams.php</code>: Looks up the courses(s) that match the possibly incomplete passed name and outputs the course id, course name, section and instructor as a JSON array. <!--<strong>optimize to avoid requiring the user to select a singleton or null???</strong>--></li>
+				<li><code>myexams.js</code>: Renders the JSON result as an HTML select menu, captures the user-choice from the select menu, and invokes search.php, now including the course id.</li>
+				<li><code>search.php</code>: Shows the exmas timetable results for the course of the provided ID, including everything listed in the sample image at the top of this page.</li>
+			</ol>
+
+			<p>
+			Note that you should still use the form itself to convey the additional information to search.php, rather than using JavaScript to compose a query string, and then navigating to a new URL. <!--(Hint: Look at the HTML-Forms lecture slides for ways of including information in a form that isn't visible to the user.)-->
+			</p>
+
+			<p>
+			Pausing/resuming the form submission: If your "search"
+			button is a "submit" button inside a form tag, any
+			click on it will attempt to immediately submit
+			the form. You don't want this to happen right
+			away, since your JavaScript code needs to do an
+			intermediate Ajax request to look up the course's
+			id (and name etc) before the form can actually be submitted.
+			</p>
+
+			<p>
+			To 'pause' the form submission, you can have jQuery
+			listen for the form's 'submit' event and define
+			your own handler function for it.  Later when
+			the user has selected a specific course from the select menu,
+			you can trigger a form submit by calling
+			<code>.submit()</code>
+			on the jQuery object representing the form tag.
+			</p>
+
+			<p>
+			If your <code>exams.php</code> Web service
+			is unable to find any courses matching the provided
+			search terms, your jQuery code should inject an error
+			message into the page indicating this to the user,
+			and abort submission of the form altogether.
+			</p>
+
+			<!--<strong>this becomes an API spec for student's Web svc
+			</strong>-->
+		<div>
+			<h2>Course Lookup Web Service, <code>exams.php</code>:</h2>
+
+			<table class="paramtable">
+				<tbody><tr>
+					<th>Parameter name</th><th>Value</th>
+				</tr>
+				<tr>
+					<td><code>course</code></td>
+					<td>course name (or partial  name) as a string, such as "csc"</td>
+				</tr>
+				
+			</tbody></table>
+			
+		</div>
+
+<!--
+<pre>
+parameter name	value
+first_name	instructor's (partial or complete) first name as a string, such as "will"
+last_name	instructor's (partial or complete) last name as a string, such as "shatner"
+</pre>
+			-->
+
+			The exams.php service returns the id, name, section and instructor for a (partial or complete) course name parameter given to it.
+
+			For example, to search for courses with partial name "csc":
+<pre>
+https://mathlab.utsc.utoronto.ca/courses/cscb20w17/your_utorid/exams.php?course=csc
+</pre>
+			This query would return the following JSON output,
+			containing the instructor ID and full name of the matching instructor:
+			<pre>
+[{"course":"CSCA08H3S","section":"LEC01","instructor":"Dema, I.","id":"104"},
+{"course":"CSCA48H3S","section":"ALL","instructor":"Cheng, N.","id":"105"},
+{"course":"CSCB09H3S","section":"ALL","instructor":"Schroeder, B.","id":"106"},
+{"course":"CSCB20H3S","section":"LEC01","instructor":"Bretscher, A.","id":"107"},
+{"course":"CSCB58H3S","section":"LEC01","instructor":"Harrington, B.","id":"108"},
+{"course":"CSCB63H3S","section":"LEC01","instructor":"Hadzilacos, V.","id":"109"},
+{"course":"CSCC09H3S","section":"LEC01","instructor":"Sans, T.","id":"110"},
+{"course":"CSCC24H3S","section":"LEC01","instructor":"Tafliovich, A.","id":"111"},
+{"course":"CSCC63H3S","section":"LEC01","instructor":"Bretscher, A.","id":"112"},
+{"course":"CSCC69H3S","section":"LEC30","instructor":"Meraji, S.","id":"113"},
+{"course":"CSCD01H3S","section":"LEC01","instructor":"Tafliovich, A.","id":"114"},
+{"course":"CSCD37H3S","section":"LEC01","instructor":"Pancer, R.","id":"115"},
+{"course":"CSCD43H3S","section":"LEC30","instructor":"Meraji, S.","id":"116"},
+{"course":"CSCD58H3S","section":"LEC01","instructor":"Lim, J.","id":"117"}]
+</pre>
+
+<p>
+jQuery's <code>$.getJSON()</code>
+is well suited to this kind of task, fetching JSON with
+Ajax and injecting it into some onscreen element using a callback function.
+<!--
+For example, the following
+JavaScript code injects a paragraph into an element with id of output:
+</p>
+<pre>
+$("#output").innerHTML = "&lt;p>Hello, world!&lt;/p>";
+</pre>
+-->
+
+<p>
+			Your Web service should issue an HTTP error code
+			of 404 Not Found if no instructor is found in the
+			database that matches the given search terms.
+			</p>
+			
+		</div>
+			<h2>Exam Search Page, <code>search.php</code>:</h2>
+
+			<p>
+			The <code>search.php</code> page performs a query on the <code>exam</code> database to
+			show a given instructor's courses.  You will need to download the following dump file:
+			<a href="https://mathlab.utsc.utoronto.ca/courses/cscb20w17/bretsche/assignments/a3/exams.sql">exams.sql</a> and edit the 
+			line <code>USE utorid;</code> to have your own <code>utorid</code>.  You can then install the 
+			required tables <code>courses</code> and <code>time</code> by executing the following command on mathlab or cmslab:
+			</p>
+			<p>
+			<code>mysql -u utorid -p < exams.sql</code>
+			</p>
+			
+			
+			<p>
+			<code>search.php</code> should  perform
+			a query for the course using the passed course id.
+			</p>
+<table class="paramtable">
+				<tbody><tr>
+					<th>Parameter name</th><th>Value</th>
+				</tr>
+				<tr>
+					<td><code>course_id</code></td>
+					<td>course id</td>
+				</tr>
+				
+			</tbody></table>
+			<p>
+			The database has the following relevant tables.
+			</p>
+
+			<table class="paramtable">
+				<tbody><tr>
+					<th>table</th>
+					<th>columns</th>
+				</tr>
+
+				<tr>
+					<td><code>courses</code></td>
+					<td><code>course</code>, <code>section</code>, <code>instructor</code>, <code>id</code></td>
+				</tr>
+
+				<tr>
+					<td><code>time</code></td>
+					<td><code>id</code>, <code>date</code>, <code>start</code>, <code>end</code>, <code>duration</code>, <code>room</code></td>
+				</tr>
+
+				
+			</tbody></table>
+
+<p>Once you install the database tables you can do a couple select statements to get familiar with the tables.  FYI - this is the
+official time table for final exams for Winter 2017 at UTSC.</p>
+
+
+			<strong>Query filtering in PHP is not
+			acceptable.</strong>  Your SQL queries must filter
+			the data down to only the relevant rows and columns.
+			</p>
+		
+
+		<div id="developmentstrategy">
+			<h2>Developing Your Program:</h2>
+			
+			
+			<p>
+		Use the <strong>MySQL console</strong> to develop your queries before writing PHP SQL code. 
+			</p>
+			
+			<p>
+			When you're ready to move your queries to PHP,
+			<strong>test the results</strong> returned by the PHP functions to troubleshoot errors (the functions all return false if they fail).  
+			If your query is not working properly or giving you the wrong results, be sure to check the exact text of the query that's being sent 
+			to the MySQL server from your PHP code -- it may be different than you think!  
+			Often little SQL syntax errors are introduced when you put your query into PHP, so it helps to see 
+			precisely the text that's being sent to the database server.  Hint: Save the text of your SQL query in 
+			a variable, then print that variable inside <code>pre</code> tags.
+			</p>
+		</div>
+
+
+		<div id="implementation_grading">
+			<h2 style="clear: none;">Implementation and Grading:</h2>
+			<p>To earn a maximum mark of <strong>80%</strong> you should complete the requirements as outlined above.  To earn a maximum mark of 100% on this assignment 
+			you should add to the functionality of this website.  For example, 
+			
+			<ul>
+			<li> Rather than simply display one course exam timetable
+			your web app could allow the use to add more and more courses to the time table so that multiple exams are listed and even indicate exams that have 
+			conflicting times.  </li>
+			<li>You could
+			allow a user to search by other parameters such as instructor name or date of the exam in addition to course name. </li>
+			<li> You can make the webpage 
+			 look flashy and professional.</li>
+			 </ul>
+			 
+			 In order to get extra marks in the "A" range your webpage will need to show significant extra functionality and styling.  
+			Submit your work to MarkUs. 
+			</p>
+
+			<p>
+			All HTML output sent by your PHP code should pass the W3C XHTML validator. Your CSS code should pass the W3C CSS validator and should avoid redundant or poorly written rules.
+			</p>
+
+			<p>
+			Your code should follow style guidelines similar to those for Assignment 2.  Minimize redundant HTML/CSS/PHP/JavaScript code. Use functions and include files to break up code. Avoid global variables. Place descriptive <strong>comments</strong> at the top of each file, each function, and on complex code. Place a comment next to every SQL query  that explains what the query is looking for. Use parameters and return values properly.
+			</p>
+
+			<p>
+			For full credit, you must write your JS code using unobtrusive JavaScript, so that no JavaScript code, onclick handlers, etc. are embedded into the XHTML code. Properly use the XHTML DOM to manipulate page content.
+			</p>
+			<p>
+		Show proper separation of content, presentation, and behavior between HTML, CSS, and JS/PHP. As much as possible, your JS code should use CSS classes and rules rather than manually setting style properties in the JS.
+			</p>
+			<p>
+			Format your code  similarly to the examples from class. Use good variable and method names and indentation. Avoid lines of code and comments more than 100 characters wide.
+			</p>
+			<p>
+                       <strong>Please do not place a solution to this
+                                assignment online on a publicly-accessible
+                                (non-password protected) Web site</strong>;
+                        doing so will be considered a violation of the
+                        Academic Code of Conduct.
+                	</p>
+
+<h1>Alternative Assignment Options</h1>
+
+If you would like to create your own web app from scratch you need to write a short proposal and submit to me first.  Your web app would need to include the following:
+
+<ul>
+	<li>HTML with CSS styling</li>
+	<li>Significant PHP</li>
+	<li>Significant javascript including jQuery</li>
+	<li>MySQL interacting with either a database we already have or one that you create.</li>
+	<li>JSON data</li>
+	<li>AJAX to deal with the JSON data</li>
+	<li>HTML forms</li>
+</ul>
+	
+
+
+<h4>Good Luck!<br></h4>
+
+
+
+</div></body></html>

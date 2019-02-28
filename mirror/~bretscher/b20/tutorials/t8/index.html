@@ -1,0 +1,281 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Tutorial Week 9, Mar 07</title>
+  <base href=""/>
+  <link rel="stylesheet" type="text/css" href="../../../../bretscher/b20/tutorials/b20.css"/>
+  <style type="text/css">
+	q  { display: none }
+  </style>
+</head>
+<body style="color: rgb(0, 0, 0);" alink="#ee0000" link="#0000ee" vlink="#551a8b">
+<div class="title">
+CSCB20 Tutorial Week 8, Feb 27
+</div>
+
+<h3>Objectives for this tutorial:</h3>
+<ol>
+<li>Intro to HTML and CSS
+<li>Validating HTML and CSS
+<li>Firebug
+</ol>
+
+<hr/>
+
+<ol>
+
+
+
+<li><h3>Intro to HTML and CSS</h3>
+
+<p>
+Asst 2 requires that you understand a little about the structure and meaning
+of an HTML document, but the starter.html file actually includes most of
+the HTML you'll need.
+<h4>Obtaining Asst 2 Starter Code</h4>
+The Starter Code for Asst 2 consists of a Web page (HTML code).
+You will want to download a copy of the starter page to your own
+working area on your personal computer and/or mathlab,
+where you can modify it and view the results with a Web browser.
+<h5>For a Personal Computer</h5>
+Go to the Asst 2 handout (which is itself a Web page)
+and right click on the 
+starter link to select 
+save-link-as to save the page to your local disk.
+<h5 id="browser">On the mathlab Server</h5>
+Copy the file from the assignment directory to your Web-space, e.g.
+in your cmslab home directory, execute these two commands
+(you can copy-paste from this handout with cntl-c in
+the browser window and shift-insert on the mathlab command line).
+<pre>
+cd /courses/webspace/cscb20w17/YOUR_UTORid
+cp /courses/webspace/cscb20w17/bretsche/assignments/a2/fresh.html .
+</pre>
+You should now be able to load the starter page using a Web browser with
+this URL:
+<pre>
+https://mathlab.utsc.utoronto.ca/courses/cscb20w17/YOUR_UTORid/fresh.html
+</pre>
+
+If you get a "permission denied" response, 
+make sure the starter file is readable to the Web server:
+<pre>
+chmod go+r fresh.html
+</pre>
+
+<p>
+The main task for step 1 is to craft a Cascading Style Sheet that will
+render the fresh.html document to match the image shown on the handout.
+Let's examine some of the key CSS concepts that you'll have to master.
+<h4>div and span elements</h4>
+&lt;div> and &lt;span> are section elements that are convenient for
+associating style (CSS) and behavior (JavaScript) with parts of an
+HTML page.  We differentiate among sets of &lt;div> and &lt;span> 
+elements by their "id" and/or "class" attributes.  For example:
+<pre>
+&lt;div id="first_section"> ... other elements ... &lt;/div>
+&lt;span id="first_phrase"> ... other elements ... &lt;/span>
+&lt;div class="left_menu"> ... other elements ... &lt;/div>
+&lt;span class="conspicuous"> ... other elements ... &lt;/span>
+</pre>
+We'll see below how to associate a style with div and span section elements. 
+In Asst 2, you'll see many div elements in the
+<a href="http://mathlab.utsc.utoronto.ca/courses/cscb20w17/bretsche/assignments/a2/fresh.html">starter page</a>.
+Briefly, when a style is associated with a 
+&lt;div> or &lt;span> section element,
+that same style is "inherited" by all the elements nested within that
+section element.
+
+<h4>CSS "selectors" - binding style to HTML elements</h4>
+	<p>
+	As shown in the lecture notes, the general form of a
+	CSS style definition is:
+<pre>
+selector { style_property: style_value; style_property: style_value; ... }
+</pre>
+	<p>
+	The "selector" identifies the part of an HTML element to which 
+	the enumerated style_properties are to apply.  CSS provides
+	a compact yet powerful set of selector types (summarized in
+	the lecture slides).
+	The "id" and "class" selectors are mentioned above, and these
+	are the most important for Asst 2.  Others that may come in
+	handy are contextual selection and element-list selection.
+<p>Write a CSS selector for each of these element sets:
+<ol>
+<li>all "h2" elements
+<li>element with ID "intro"
+<li>"h2" elements inside an element with ID "intro"
+<li>"h2" elements, except those inside elements with ID "intro"
+<li>"p" elements inside elements with id "content"
+<li>"p" elements directly inside (child of) elements with id "content"
+<li>elements with class "bordered"
+<li>"h2" elements with class "bordered"
+</ol>
+<q>
+<ol>
+<li>h2
+<li>#intro
+<li>#intro h2
+<li>#content h2, #footer h2
+<li>#content p
+<li>#content > p
+<li>.bordered
+<li>h2.bordered
+</ol>
+</q>
+<h4>Creating Web pages with CSS Styling</h4>
+	<div style="width: 300px; height: 300px; background-color: red; padding: 50px; float: right; margin: 1em 0 0 1em;">
+		<div style="width: 200px; height: 200px; background-color: yellow; border: 50px solid black;"></div>
+	</div>
+<h4>Box Model</h4>
+Given the HTML shown below "boxes.html",
+write "boxes.css" to create the appearance show in the adjacent image,
+and described more precisely below the HTML.
+<pre>
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;link href="boxes.css" type="text/css" rel="stylesheet" />
+  &lt;/head>
+  &lt;body>
+    &lt;div id="outer-box">
+      &lt;div id="inner-box">&lt;/div>
+    &lt;/div>
+  &lt;/body>
+&lt;/html>
+</pre>
+<p>
+The outer border of the box is red, the inner border of the box is black,
+and the inner background color of the box is yellow.
+<p>
+Both the outer and inner borders have a width of 50 pixels. The yellow
+portion of the box has a width and height of 200 pixels. The overall box
+has a width and height of 400 pixels.
+<q>
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#outer-box {
+	background-color: red;
+	width: 300px;
+	height: 300px;
+	padding: 50px;
+}
+
+#inner-box {
+	background-color: yellow;
+	width: 200px;
+	height: 200px;
+	border: 50px solid black;
+}
+
+or
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#outer-box {
+	background-color: black;
+	width: 300px;
+	height: 300px;
+	border: 50px solid red;
+}
+
+#inner-box {
+	background-color: yellow;
+	width: 200px;
+	height: 200px;
+	margin: 50px;
+}
+
+... many other alternatives possible ...
+</q>
+<img src="../../../../bretscher/b20/tutorials/t8/img/stretch.png" alt="stretch screenshot" style="width: 400px; float: right; margin: 1em 0 0 3em;"/>
+<h4>Fonts, background-color's</h4>
+Create a webpage that looks like the "Stretch Longcat" shown at right.
+Use a mix of serif and sans-serif fonts, extra-large fonts,
+and clashing colors. Use the following text and image to 
+build your page:
+<a href="../../../../bretscher/b20/tutorials/t8/stretch.txt">stretch.txt</a>
+<a href="../../../../bretscher/b20/tutorials/t8/img/stretch.jpg">stretch.jpg</a>
+
+<!--
+<h4>the "box model" for layout</h4>
+<h4>backgrounds and colors</h4>
+<h4>etc</h4>
+-->
+
+<li><h3 style="clear: right">Validating HTML and CSS</h3>
+<h4>HTML Validation</h4>
+The following HTML code has errors that cause it to fail the
+<a href="http://validator.w3.org">W3C HTML validator</a> test.
+Identify and fix the errors in the code.
+You can copy-paste the code into the validator using its
+"Validate by Direct Input" tab.
+<pre>
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+  &lt;/head>
+  &lt;h1>Dogs are the best!!!&lt;/h1>
+  &lt;body>
+    &lt;h2>Why dogs are the best&lt;/h2>
+      &lt;li>One, of all, they are cute.
+      &lt;li>Two, they protect against meanies.
+      &lt;li>Finally, CATS don't do either one or two!
+    &lt;h2>Why cats are &lt;em>NOT AS GOOD AS DOGS&lt;/h2>&lt;/em>
+    &lt;p>They are mean &amp; they scratch.&lt;/p>
+    &lt;h2>Dog pictures:
+    &lt;img src="http://www.example.com/images/boxer.jpg">
+  &lt;/body>
+&lt;/html>
+&lt;/!DOCTYPE>
+</pre>
+<h4>CSS Validation</h4>
+The following CSS code has errors that cause it to fail the
+<a href="http://jigsaw.w3.org/css-validator">W3C CSS validator</a> test.
+Identify and fix the errors in the code.
+As above with HTML, you can copy-paste the CSS into the
+validator using its "By direct input" tab.
+<p>
+Once your CSS passes the validation check, 
+add a short comment header to the CSS code,
+and a new CSS rule to justify the text in paragraphs (&lt;p> elements)
+with the CSS <code>text-align</code> and <code>text-justify</code> properties.
+<pre>
+body {
+    background-color: white,
+    foreground-color: red;
+}
+
+h1 {
+    font-align: "centered";
+}
+
+h2 {
+    font-decoration; underlined;
+}
+
+li (
+    font-name: Times New Roman; serif;
+)
+</pre>
+<img src="../../../../bretscher/b20/tutorials/t8/img/firebug.png" alt="Firebug screenshot" style="margin: 0 0 0 1em; float: right;"/>
+<li><h3>Firebug</h3>
+Firebug is an add-on for the Firefox browser that lets you dynamically
+examine or modify the content and styling of Web pages, among many other
+features. After installing it, right-click any element on this handout,
+or on one of the above exercises, and choose Inspect Element to get started.
+
+<img src="../../../../bretscher/b20/tutorials/t8/img/firebug3.png" alt="Firebug screenshot" style="margin: 1em 0;"/>
+</ol>
+<br/> <br/>
+</body>
+</html>

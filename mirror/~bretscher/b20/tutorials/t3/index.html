@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Tutorial 3, January 23</title>
+  <base href=""/>
+
+  <link rel="stylesheet" type="text/css" href="../../../../bretscher/b20/tutorials/b20.css"/>
+</head>
+<body style="color: rgb(0, 0, 0);" alink="#ee0000" link="#0000ee" vlink="#551a8b">
+<div class="title">
+CSCB20 Week 3 Tutorial, January 23
+</div>
+
+<h3>Objectives for this tutorial:</h3>
+<ol>
+<li>Hands-on lab practice with cmslab
+<li>Intro to the mySQL database engine
+<li>Practice writing queries
+</ol>
+
+<hr/>
+
+<ol>
+  <li><h3>Hands-on labs</h3>
+<p>
+<p>
+The labs will provide you with opportunities to learn about
+course technologies by working with them on small sample tasks.
+<p>
+You may elect to work with a partner, or on your own in any of the labs.
+<p>
+No marks are assigned for lab participation, but you are strongly encouraged
+to attend to take advantage of the chance to ask questions as you learn
+your way around the various languages and technologies covered in B20.
+
+  <li><h3>Intro to mySQL</h3>
+
+<img alt="MySQL logo" src="../../../../bretscher/b20/tutorials/img/mysql.jpg" style="float:right">
+<h4>MySQL DB access on cmslab.utsc server</h4>
+<p>
+MySQL is a free, open-source relational database,
+which also happens to be one of the most widely used databases.
+A common configuration for Web apps or services using MySQL
+goes by the acronym LAMP:
+Linux OS, Apache Web server, MySQL DB, PHP server-side scripting;
+we will use the LAMP configuration on cmslab.
+<p>
+Begin by logging into your account on the cmslab.utsc.utoronto.ca
+server using the Putty command -> cmslab, which should be listed
+under the Start menu, "remote connections".
+<img alt="MySQL console" src="../../../../bretscher/b20/tutorials/img/mysql_console.jpg" style="float:right; width:500px; margin:.5em .2em .5em .5em">
+<p>
+Each person enrolled in B20 has their own personal mySQL DB on
+the cmslab.utsc.utoronto.ca server.
+Try logging in to your MySQL database instance on cmslab,
+using your UTORid credentials and the following syntax:
+<pre>
+mysql -u username -p 
+</pre>
+The system will prompt you for your password which is just your utorid.
+Once logged in, you'll see a command-line interface that looks like 
+the adjacent screenshot.
+Try logging out by typing cntl-d or 
+<pre>
+exit
+</pre>
+
+<p>
+One of the nice features of the mysql command is that you can run
+it from any server on the Internet with mysql installed (e.g. a home computer),
+and you can tell it to use your database on the cmslab server using syntax:
+<pre>
+mysql -h cmslab.utsc.utoronto.ca -u username -p 
+</pre>
+<p>
+At this point you have a database, but it is empty - it has no tables
+(more about the structure of databases and tables in class later).
+Let's remedy this by setting up a few tables, using pre-created
+database-dump files.
+<p>
+Begin by copying a copy of the universities.sql database dump
+to your own cmslab directory (note the "." at the end of the line):
+<pre>
+cp /courses/courses/cscb20w17/bretsche/tutorials/universities.sql .
+</pre>
+Open the universities.sql using a command line editor such as <code>pico</code>, <code>vi</code> or <code>emacs</code>. Ask your TA for help if you don't 
+know how to use such an editor. Replace bretsche with your own utorid in the following line:
+
+<pre>
+USE cscb20w17_bretsche
+</pre> 
+This tells line says which database to use. This is your own personal database. You also have access to two shared databases, imdb and imdb_small.
+<br>
+
+Now insert tables from the universities database from class into your database by running the following command:
+<pre>
+mysql -h cmslab.utsc.utoronto.ca -u utorid -p utorid &lt; universities.sql
+</pre>
+<p>
+Now we have a table that we can play with using SQL queries,
+that is, SQL statements that retrieve selective data from the DB.
+Log in to your mysql console,
+
+<pre>
+mysql -u username -p 
+</pre>
+ and type this command to use your database:
+<pre>
+use utorid
+</pre>
+now check that you have all the university tables:
+<pre>
+show tables;
+</pre>
+Pick a table and use the command 
+<pre>
+show columns from my_table;
+</pre>
+to see the columns in the table.</br>
+
+<p> Let's write some queries.  Write queries to:
+<ol>
+<li>Select everything from the teaches table.</li>
+<li>Find the ids of the instructors who teach in the Fall semester and the year 2009.</li>
+<li>Find the names of the instructors who teach in the Fall semester and the year 2009.</li>
+<li>Find the unique names (no duplicates) of the instructors who teach in the Fall semester and the year 2009.</li>
+<li>Find the unique names (no duplicates) of the instructors who teach in the Fall semester and the year 2009 and make more than $80000.</li>
+<li>Find pairs of courses that have the same pre-requisites.</li>
+<li>Return the number of courses in the Biology department.</li>
+<li>Find the instructor names and the titles of the courses they teach.</li>
+</ol>
+
+
+<br/> <br/>
+
+<h2>University Tables</h2>
+<img alt="MySQL console" src="../../../../bretscher/b20/tutorials/img/teaches.pdf"><br> 
+<img alt="MySQL console" src="../../../../bretscher/b20/tutorials/img/instructor.pdf" ><br> 
+<img alt="MySQL console" src="../../../../bretscher/b20/tutorials/img/section.pdf" ><br> 
+<img alt="MySQL console" src="../../../../bretscher/b20/tutorials/img/prereq.pdf" ><br> 
+<img alt="MySQL console" src="../../../../bretscher/b20/tutorials/img/department.pdf" ><br> 
+<img alt="MySQL console" src="../../../../bretscher/b20/tutorials/img/course.pdf" ><br> 
+</body>
+</html>
