@@ -1,0 +1,1 @@
+As a student user, I must be able to see all the assignments, what they are about, when they are due, and how much they're worth of total grade.

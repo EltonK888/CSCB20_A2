@@ -1,0 +1,1 @@
+As a student, I want to be able to access the course Piazza and Markus server by clicking on the respective buttons on the navigation bar.

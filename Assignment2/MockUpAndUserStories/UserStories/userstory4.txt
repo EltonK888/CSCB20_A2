@@ -1,0 +1,1 @@
+As a student, when I navigate to the course team, I should be able to see all my instructors and TAs for the course along with their utoronto emails and normally scheduled office hours. There should be an image or a default stock image of the instructor/TA if they have no image.
