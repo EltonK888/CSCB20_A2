@@ -1,15 +1,9 @@
-<<<<<<< HEAD:Assignment2/src/stylesheet/header+footer.css
 html, body {
     font-family: "Noto Sans", sans-serif;
     color: #00204E;
     min-height: 100%;
-=======
-* {
-    /* use Noto Sans by default */
-    font-family: "Noto Sans", sans-serif;
->>>>>>> fd76ae3f21e4a9f9e8824ec044f533b118cea718:Assignment2/src/stylesheet/header.css
-}
-/* ----------------- header --------------- */
+    
+/* --------- header --------------- */
 header {
     position: fixed;
     width: 100%;
