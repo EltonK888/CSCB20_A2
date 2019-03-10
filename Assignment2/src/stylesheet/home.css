@@ -20,10 +20,25 @@ header {
     justify-content: center;
 }
 
+.heading-text {
+    display: flex;
+    align-items: center;
+}
+
 .heading h1 {
     text-align: center;
     order: 2;
+    padding: 0pt 10pt;
+    margin: 0pt;
 }
+
+/* switch to vertical layout for phones */
+@media (max-aspect-ratio: 99/100) {
+    .heading-text {
+        flex-direction: column;
+    }
+}
+
 .heading img {
     order: 1;
     height: 100px;
