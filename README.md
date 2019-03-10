@@ -1,5 +1,9 @@
 # cscb20 A2 - redesign course website
 
+## TOC
+  - [directory structure](#directory-structure)
+  - [task](#task)
+
 ## directory structure
 
 - `Assignment2`: files to hand in
@@ -8,6 +12,7 @@
 
 ## task
 - mockups
+  -  https://gomockingbird.com/projects/sixapmw/6J50Ve
 
   - to show how the user will interact with your website
   

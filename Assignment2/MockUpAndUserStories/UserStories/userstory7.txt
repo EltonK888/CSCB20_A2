@@ -1,1 +1,1 @@
-As a student, when I navigate to the syllabus page, I should be able to find the entire syllabus on the website and a link to download it as a pdf.
+As a TA, I should be able to edit the labs page.
