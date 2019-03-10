@@ -1,12 +1,14 @@
 body {
     font-family: sans-serif, "Noto Serif";
+    color: #00204E;
 }
-
+/* ----------------- header --------------- */
 header {
     position: fixed;
     width: 100%;
     top: 0;
 }
+
 .heading {
     display: flex;
     background-color: #ffffff; /*U of t colour */
@@ -28,11 +30,17 @@ header {
     width: auto;
 }
 
+/* --------Navigation Bar -----------*/
 .nav-bar {
     background-color: #00204E;
     border-bottom:#00204E solid 1px;
     border-radius: 5px; 
     margin-right: 15px;
+}
+
+/* add some spaces to the right of the icons*/
+.fas {
+    margin-right: 10px;
 }
 
 .nav-bar ul {
@@ -69,6 +77,152 @@ header {
 }
 
 .content {
-    margin-top: 9%;
-    background-image: url("../images/home_background.png");
+    margin-top: 10%;
+    padding-bottom: 100px;
+
+}
+
+.CSCB20 {
+    font-family: "Noto Serif", sans-serif;
+    color:#00204E;
+    height: 100%;
+    text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    padding-left: 10%;
+    font-size: 200%;
+    background-image: url("../images/home_background2.png");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+
+.course-description h2 {
+    background-color: #00204E;
+    color: #ffffff;
+    font-family: "Noto Serif", sans-serif;
+    padding-left: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+
+.course-description p {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-bottom: 20px;
+    font-size: 18px;
+}
+
+.course-description a {
+    color: #00204E;
+}
+
+.course-description a:hover {
+    color: rgb(28, 137, 209);
+    transition: 0.2s;
+}
+
+.Instructor-info .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Instructor-info h2 {
+    background-color: #00204E;
+    color: #ffffff;
+    font-family: "Noto Serif", sans-serif;
+    padding-left: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+
+.Instructor-info .info div {
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    width: 15%;
+    height: 130px;
+}
+
+.Instructor-info .info div h3 {
+    font-family: "Noto Serif", sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    font-style: italic;
+}
+
+.Instructor-info .info div h4 {
+    font-style: italic;
+    font-size: 16px;
+    overflow-wrap: break-word;
+
+}
+
+.Instructor-info .info div a {
+    text-decoration: underline;
+    color: #00204E;
+}
+
+.Instructor-info .info div a:hover {
+    color: #ffffff;
+    transition: 0.2s
+}
+.ins-name {
+    background-color: #E31837;
+}
+
+.email {
+    background-color: #008BB0;
+}
+
+.office {
+    background-color: #271100;
+}
+
+.phone {
+    background-color: #7BA4D9;
+}
+
+.lectures {
+    background-color: #008BB0;
+}
+
+.office-hours {
+    background-color: #E31837;
+}
+
+footer {
+    background-color: #222;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer div {
+    padding-top: 75px;
+    font-family: "Noto Serif", sans-serif;
+}
+
+.CMS-link a{
+    text-decoration: none;
+    color: #ffffff
+}
+
+.CMS-link a:hover{
+    color: #008BB0;
+    border-bottom: #008BB0 solid 1px;
+    transition: 0.5s ease;
+}
+
+.site-design {
+    font-style: italic;
+    color: #ffffff;
 }
