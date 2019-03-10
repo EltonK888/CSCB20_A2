@@ -1,3 +1,7 @@
+* {
+    /* use Noto Sans by default */
+    font-family: "Noto Sans", sans-serif;
+}
 /* ----------------- header --------------- */
 header {
     position: fixed;
