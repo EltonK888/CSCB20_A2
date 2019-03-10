@@ -90,5 +90,31 @@ header {
     /* start after the heading */
     margin-top: 161px;
     /* padding-bottom: 100px; */
+}
 
+.content-blocks h2 {
+    background-color: #00204E;
+    color: #ffffff;
+    font-family: "Noto Serif", serif;
+    padding-left: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    /* margin-block-start: 0px; */
+}
+
+.content-blocks p {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-bottom: 20px;
+    font-size: 18px;
+}
+
+.content-blocks a {
+    color: #00204E;
+}
+
+.content-blocks a:hover {
+    color: rgb(28, 137, 209);
+    transition: 0.2s;
 }
