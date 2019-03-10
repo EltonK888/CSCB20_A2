@@ -2,7 +2,8 @@ html, body {
     font-family: "Noto Sans", sans-serif;
     color: #00204E;
     min-height: 100%;
-    
+}
+
 /* --------- header --------------- */
 header {
     position: fixed;
@@ -98,6 +99,13 @@ header {
 
 }
 
+/* push down the contents further for phone view */
+@media (max-aspect-ratio: 99/100) {
+    .content {
+        margin-top: 16vw;
+        min-height: 100%;
+    }
+}
 
 
 
