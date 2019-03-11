@@ -3,6 +3,11 @@ html, body {
     color: #00204E;
     min-height: 100%;
 }
+
+code {
+    font-family: 'Fira Code', monospace;
+}
+
 /* ----------------- header --------------- */
 header {
     position: fixed;
