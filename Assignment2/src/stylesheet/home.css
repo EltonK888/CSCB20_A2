@@ -4,10 +4,6 @@ html, body {
     min-height: 100%;
 }
 
-code {
-    font-family: 'Fira Code', monospace;
-}
-
 /* ----------------- header --------------- */
 header {
     position: fixed;
