@@ -1,0 +1,32 @@
+.block-content {
+    border: 3px solid #00204E;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 20px;
+    background-color: rgb(218, 231, 245);
+}
+
+.block-content:hover {
+    background-color: #ffffff;
+    transition: 0.5s ease-in;
+}
+
+.block-content h2 {
+    font-family: "Noto Serif", sans-serif;
+    font-size: 26pt;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 10px;
+}
+
+.block-content a {
+    color: #00204E;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.block-content a:hover {
+    color: #008BB0;
+    transition: 0.2s;
+}
