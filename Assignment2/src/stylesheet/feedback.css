@@ -18,7 +18,13 @@
 .std-feedback {
     margin: 30px 1%;
     border: 3px #00204E solid;
+    background-color: rgb(218, 231, 245);
     padding: 20px 40px;
+}
+
+.std-feedback:hover {
+    background-color: #ffffff;
+    transition: 0.3s ease-in;
 }
 
 .std-feedback h2 {
