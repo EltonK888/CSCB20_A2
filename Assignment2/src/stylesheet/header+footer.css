@@ -101,12 +101,13 @@ header {
 }
 
 /* push down the contents further for phone view */
-@media (max-aspect-ratio: 99/100) {
+/* does not really work */
+/* @media (max-aspect-ratio: 99/100) {
     .content {
         margin-top: 18vw;
         min-height: 100%;
     }
-}
+} */
 
 /* ------------------footer-----------------*/
 footer {
