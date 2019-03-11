@@ -1,0 +1,53 @@
+.content{
+    margin-top: 180px;
+    padding-bottom: 100px;
+    min-height: 100%;
+    height: 100%;
+
+}
+.team-member {
+    border: 3px solid #00204E;
+    padding-right: 15px;
+    background-color: rgb(218, 231, 245);
+    margin: 30px 20px;
+    display: flex;
+}
+
+.team-member:hover {
+    background-color: #ffffff;
+    transition: 0.5s ease-in;
+}
+
+.team-member img {
+    height: 280px;
+    margin: 10px;
+    background-color: #ffffff;
+    border: 2px solid #00204E;
+    width: auto;
+}
+
+.member-info h2 {
+    font-family: "Noto Serif", sans-serif;
+    font-size: 26pt;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 10px;
+}
+
+.member-info h3 {
+    font-family: "Noto Serif", sans-serif;
+    font-size: 20pt;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.member-info a {
+    font-weight: bold;
+    color: #00204E;
+}
+
+.member-info a:hover {
+    color: #008BB0;
+    transition: 0.2s;
+}
