@@ -160,6 +160,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 /* small space between boxes for 1366x768 screen */
@@ -244,6 +245,68 @@ header {
     background-color: #E31837;
 }
 
+.news h2 {
+    background-color: #00204E;
+    color: #ffffff;
+    font-family: "Noto Serif", serif;
+    padding-left: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+
+.news-post {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    margin-bottom: 40px;
+    font-size: 14pt;
+}
+
+.news-post h3 {
+    font-size: 16pt;
+    padding-bottom: 5px;
+    border-bottom: #00204E 1px dotted;
+}
+
+.resources h2 {
+    background-color: #00204E;
+    color: #ffffff;
+    font-family: "Noto Serif", serif;
+    padding-left: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+
+.resources a {
+    font-weight: bold;
+    color: #00204E;
+}
+
+.resources h3 {
+    padding-bottom: 5px;
+    border-bottom: #00204E 1px dotted;
+}
+
+.resources a:hover {
+    color: #008BB0;
+    transition: 0.3s ease-out;
+}
+
+.online-resources{
+    padding-left: 2.5%;
+    font-size: 18px;
+}
+
+.software-doc {
+    padding-left: 2.5%;
+    font-size: 18px;
+}
+
+
+code {
+    color: #008BB0;
+}
 /* ------------------footer-----------------*/
 footer {
     background-color: #222;
