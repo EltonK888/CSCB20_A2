@@ -136,20 +136,21 @@
 /* news ends*/
 
 /* resources */
-#resources a {
+
+/* #resources a {
     font-weight: bold;
     color: #00204E;
-}
+} */
 
 #resources h3 {
     padding-bottom: 5px;
     border-bottom: #00204E 1px dotted;
 }
 
-#resources a:hover {
+/* #resources a:hover {
     color: #008BB0;
     transition: 0.3s ease-out;
-}
+} */
 
 #online-resources{
     padding-left: 2.5%;

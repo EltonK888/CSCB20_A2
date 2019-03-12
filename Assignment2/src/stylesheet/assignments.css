@@ -1,5 +1,5 @@
 #b20rooms-img {
-    /* resize iamge based on viewpoint */
+    /* resize image based on viewpoint */
     /* without going over the size of the image */
     max-width: 100%;
     height: auto;
