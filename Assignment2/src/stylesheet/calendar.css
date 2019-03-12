@@ -16,6 +16,7 @@
     }
 }
 
+/* maximizes iframe */
 #calendar-box iframe {
     height: 100%;
     width:100%;

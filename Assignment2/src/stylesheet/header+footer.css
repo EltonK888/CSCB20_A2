@@ -4,6 +4,16 @@ body {
     color: #00204E;
 }
 
+/* apply link style globally */
+a {
+    font-weight: bold;
+    color: #00204E;
+}
+a:hover {
+    color: #008BB0;
+    transition: 0.3s ease-in-out;
+}
+
 /* --------- header --------------- */
 header {
     position: fixed;
