@@ -21,6 +21,7 @@
     /* padding-left: 15px;
     padding-right: 15px; */
     /* margin: 30px 20px; */
+
     /* from std feedback */
     margin: 30px 1%;
     padding: 20px 40px;
@@ -48,9 +49,10 @@
     padding-top: 10px;
 }
 
-.block-content p {
+/* not needed as we defined font style globally in header+footer.css */
+/* .block-content p {
     font-family: "Noto Sans", sans-serif;
-}
+} */
 
 .block-content a {
     color: #00204E;

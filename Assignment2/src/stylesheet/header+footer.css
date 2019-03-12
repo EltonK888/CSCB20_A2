@@ -1,7 +1,7 @@
-html, body {
+/* globally set default font */
+body {
     font-family: "Noto Sans", sans-serif;
     color: #00204E;
-    min-height: 100%;
 }
 
 /* --------- header --------------- */
@@ -140,20 +140,4 @@ footer div {
 .site-design {
     font-style: italic;
     color: #ffffff;
-}
-
-.subheadings h2 {
-    background-color: #00204E;
-    color: #ffffff;
-    font-family: "Noto Serif", serif;
-    padding-left: 5%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 5px;
-    margin-top: 50px;
-}
-
-.subheadings h4 {
-    padding-left: 2.5%;
-    font-style: italic;
 }

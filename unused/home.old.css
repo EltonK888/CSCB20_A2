@@ -1,0 +1,342 @@
+html, body {
+    font-family: "Noto Sans", sans-serif;
+    color: #00204E;
+    min-height: 100%;
+}
+
+/* ----------------- header --------------- */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.heading {
+    display: flex;
+    background-color: #ffffff; /*U of t colour */
+    color: #00204E;
+    font-family: "Noto Serif", serif;
+    height: 20%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    justify-content: center;
+}
+
+.heading-text {
+    display: flex;
+    align-items: center;
+}
+
+.heading h1 {
+    text-align: center;
+    order: 2;
+    padding: 0pt 10pt;
+    margin: 0pt;
+}
+
+/* switch to vertical layout for phones */
+@media (max-aspect-ratio: 99/100) {
+    .heading-text {
+        flex-direction: column;
+    }
+}
+
+.heading img {
+    order: 1;
+    height: 100px;
+    width: auto;
+}
+
+/* --------Navigation Bar -----------*/
+.nav-bar {
+    background-color: #00204E;
+    border-radius: 5px; 
+    margin-right: 15px;
+}
+
+/* add some spaces to the right of the icons*/
+.fas {
+    margin-right: 10px;
+}
+
+.nav-bar ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-bar ul a {
+    display: flex;
+    text-decoration: none;
+    font-weight: bold;
+    color: #ffffff;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.nav-bar ul li {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 50px;
+    text-decoration: none;  
+}
+
+.nav-bar ul a:hover{
+    color: white;
+    background-color: rgb(1, 55, 131);
+    border-radius: 5px;
+    transition: 0.5s; 
+}
+
+/* -------------------- content ----------------------*/
+.content {
+    /* start after the heading */
+    margin-top: 161px;
+    padding-bottom: 100px;
+    min-height: 100%;
+
+}
+
+.CSCB20 {
+    background-image: url("../images/home_background2.png");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+
+.CSCB20 h1 {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    padding-left: 10%;
+    font-family: "Noto Serif", serif;
+    color:#00204E;
+    height: 100%;
+    text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+    font-size: 60px;
+    font-weight: 900;
+    margin: 0px;
+}
+
+.course-description h2 {
+    background-color: #00204E;
+    color: #ffffff;
+    font-family: "Noto Serif", serif;
+    padding-left: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+
+.course-description p {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-bottom: 20px;
+    font-size: 18px;
+}
+
+.course-description a {
+    color: #00204E;
+}
+
+.course-description a:hover {
+    color: rgb(28, 137, 209);
+    transition: 0.2s;
+}
+
+.Instructor-info h2 {
+    background-color: #00204E;
+    color: #ffffff;
+    font-family: "Noto Serif", serif;
+    padding-left: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+
+.Instructor-info .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+/* small space between boxes for 1366x768 screen */
+.Instructor-info .info div {
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    width: 16.5%;
+    height: 160px;
+}
+
+/* add more spacing between boxes for higher res screens */
+@media (min-width: 1600px) {
+    .Instructor-info .info div {
+        width: 15%;
+    }
+}
+
+.Instructor-info .info div h3 {
+    font-family: "Noto Serif", serif;
+    font-weight: bold;
+    font-size: 22px;
+    font-style: italic;
+}
+
+.Instructor-info .info div h4 {
+    font-style: italic;
+    font-size: 16px;
+    overflow-wrap: break-word;
+
+}
+
+/* switch to vertical layout for phones */
+@media (max-aspect-ratio: 99/100) {
+    .Instructor-info .info {
+        flex-direction: column;
+    }
+    .Instructor-info .info div {
+        width: 90%;
+        margin: 5px 0px;
+        height: 200pt;
+    }
+    .Instructor-info .info div h3 {
+        font-size: 30pt;
+    }
+    .Instructor-info .info div h4 {
+        font-size: 26pt;
+    }
+}
+
+.Instructor-info .info div a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.Instructor-info .info div a:hover {
+    text-shadow: 0px 0px 3px #000000;
+    /* color: #ffffff; */
+    transition: 0.2s
+}
+.ins-name {
+    background-color: #E31837;
+}
+
+.email {
+    background-color: #008BB0;
+}
+
+.office {
+    background-color: #271100;
+}
+
+.phone {
+    background-color: #7BA4D9;
+}
+
+.lectures {
+    background-color: #008BB0;
+}
+
+.office-hours {
+    background-color: #E31837;
+}
+
+.news h2 {
+    background-color: #00204E;
+    color: #ffffff;
+    font-family: "Noto Serif", serif;
+    padding-left: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+
+.news-post {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    margin-bottom: 40px;
+    font-size: 14pt;
+}
+
+.news-post h3 {
+    font-size: 16pt;
+    padding-bottom: 5px;
+    border-bottom: #00204E 1px dotted;
+}
+
+.resources h2 {
+    background-color: #00204E;
+    color: #ffffff;
+    font-family: "Noto Serif", serif;
+    padding-left: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+
+.resources a {
+    font-weight: bold;
+    color: #00204E;
+}
+
+.resources h3 {
+    padding-bottom: 5px;
+    border-bottom: #00204E 1px dotted;
+}
+
+.resources a:hover {
+    color: #008BB0;
+    transition: 0.3s ease-out;
+}
+
+.online-resources{
+    padding-left: 2.5%;
+    font-size: 18px;
+}
+
+.software-doc {
+    padding-left: 2.5%;
+    font-size: 18px;
+}
+
+
+code {
+    color: #008BB0;
+}
+/* ------------------footer-----------------*/
+footer {
+    background-color: #222;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer div {
+    padding-top: 75px;
+    font-family: "Noto Serif", serif;
+}
+
+.CMS-link a{
+    text-decoration: none;
+    color: #ffffff
+}
+
+.CMS-link a:hover{
+    color: #008BB0;
+    border-bottom: #008BB0 solid 1px;
+    transition: 0.5s ease;
+}
+
+.site-design {
+    font-style: italic;
+    color: #ffffff;
+}

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>CSCB20 - Introduction to Databases and Web Applications</title>
+        <title>CSCB20 Home</title>
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Serif" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="stylesheet/header+footer.css">
+        <link rel="stylesheet" href="stylesheet/subheading+blocks.css">
         <link rel="stylesheet" href="stylesheet/home.css">
         <link rel="stylesheet" href="stylesheet/font-firacode.css">
     </head>
@@ -37,55 +39,55 @@
         </header>
         <div class="content">
             <div class="CSCB20">
-                <h1> Welcome To CSCB20 </h1>
+                <h1>Welcome To CSCB20</h1>
             </div>
-            <div class="course-description">
-                <h2> Course Description </h2>
-                <p>A practical introduction to databases and Web app development. Databases: terminology and applications; creating, querying and updating databases; the entity-relationship model for database design. Web documents and applications: static and interactive documents; Web servers and dynamic server-generated content; Web application development and interface with databases.</p>
-                <p><b>Prerequisite:</b> Some experience with programming in an imperative language such as Python, Java or C. </p>
-                <p><b>Exclusion:</b> This course may not be taken after - or concurrently with - any C- or D-level CSC course.</p>
-                <p><a href="pdfs/syllabus.pdf" target=_blank><b>Click here to download Course Syllabus (PDF)</b></a> </p>
+            <div class="subheadings" id="course-description">
+                <h2>Course Description </h2>
+                <h4>A practical introduction to databases and Web app development. Databases: terminology and applications; creating, querying and updating databases; the entity-relationship model for database design. Web documents and applications: static and interactive documents; Web servers and dynamic server-generated content; Web application development and interface with databases.</h4>
+                <h4><b>Prerequisite:</b> Some experience with programming in an imperative language such as Python, Java or C. </h4>
+                <h4><b>Exclusion:</b> This course may not be taken after - or concurrently with - any C- or D-level CSC course.</h4>
+                <h4><a href="pdfs/syllabus.pdf" target=_blank><b>Click here to download Course Syllabus (PDF)</b></a></h4>
             </div>
-            <div class="Instructor-info">
-                <h2> Instructor Information </h2>
-                <div class="info">
-                    <div class="ins-name">
+            <div class="subheadings" id="instructor-info">
+                <h2>Instructor Information</h2>
+            </div>
+                <div class="info-card-area">
+                    <div class="info-card" id="ins-name">
                         <h3>Instructor</h3>
                         <h4>Anna Bretscher</h4>
                     </div>
-                    <div class="email">
+                    <div class="info-card" id="ins-email">
                         <h3>Email</h3>
                         <h4><a href="mailto: bretscher@utsc.utoronto.ca">bretscher@utsc.utoronto.ca</a></h4>
                     </div>
-                    <div class="office">
+                    <div class="info-card" id="ins-office">
                         <h3>Office</h3>
                         <h4>IC 493</h4>
                     </div>
-                    <div class="phone">
+                    <div class="info-card" id="ins-phone">
                         <h3>Phone</h3>
                         <h4>416 208 4745</h4>
                     </div>
-                    <div class="lectures">
+                    <div class="info-card" id="ins-lectures">
                         <h3>Lectures</h3>
                         <h4>Mondays 9:15-11:00 <br> HW 216</h4>
                     </div>
-                    <div class="office-hours">
-                        <h3> Office Hours </h3>
+                    <div class="info-card" id="ins-office-hours">
+                        <h3>Office Hours</h3>
                         <h4>Wednesday<br>11:00-12:00</h4>
                     </div>
-                </div>
-            </div>
-            <div class="news">
-                <h2> News </h2>
+                    </div>
+            <div class="subheadings" id="news">
+                <h2>News</h2>
                 <div class="news-post">
-                    <h3> January 2 </h3>
-                    <p> Welcome to CSCB20. Please note that tutorials will begin in week 2</p>
+                    <h3>January 2</h3>
+                    <p>Welcome to CSCB20. Please note that tutorials will begin in week 2</p>
                 </div>
             </div>
-            <div class="resources">
-                <h2> Resources </h2>
-                <div class="online-resources">
-                    <h3> Online Resources </h3>
+            <div class="subheadings" id="resources">
+                <h2>Resources</h2>
+                <div id="online-resources">
+                    <h3>Online Resources</h3>
                     <ul>
                         <li><a href="#">Course website</a> - Course Course information, lecture notes, tutorial material, important announcements, etc. will be posted on the course website. It is your responsibility to visit it frequently.</li>
                         <li>Beginner Tutorial for <a href="https://code.tutsplus.com/articles/sql-for-beginners--net-8200">MySQL</a></li>
@@ -93,10 +95,10 @@
                         <li><a href="https://piazza.com/class/jr7mjhytaij3jc">Discussion Board</a> - You are encouraged to use the bulletin board to discuss the course material, pose questions on the assignments, etc. The bulletin board will be monitored by the instructor and by your TAs. Please, be very careful not to reveal (parts of) your solution on the bulletin board.</li>
                     </ul>
                 </div>
-                <div class="software-doc">
-                    <h3> Software and Documentation </h3>
+                <div id="software-doc">
+                    <h3>Software and Documentation</h3>
                     <ul>
-                        <li> Logging into Mathlab </li>
+                        <li>Logging into Mathlab</li>
                             <ol>
                                 <li>Mac OS comes with the application "terminal". Simple click on it to run. Login to mathlab by typing <code>ssh utorid@mathlab.utsc.utoronto.ca</code> and enter your password.</li>
                                 <li>Windows - you will need a SSH client. PuTTY is a good free one. You can download and install here: PuTTY. Use the same command as above to login to mathlab: <a href="https://www.putty.org">PuTTY</a>. User the same command as above to login to mathlab: <code>ssh utorid@mathlab.utsc.utoronto.ca</code></li>
