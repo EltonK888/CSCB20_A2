@@ -1,11 +1,38 @@
+.subheadings h2 {
+    background-color: #00204E;
+    color: #ffffff;
+    font-family: "Noto Serif", serif;
+    padding-left: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+.subheadings h4 {
+    padding-left: 2.5%;
+    font-style: normal;
+    font-weight: normal;
+}
+
 .block-content {
     border: 3px solid #00204E;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-bottom: 20px;
+    /* padding-left: 15px;
+    padding-right: 15px; */
+    /* margin: 30px 20px; */
+    /* from std feedback */
+    margin: 30px 1%;
+    padding: 20px 40px;
     background-color: rgb(218, 231, 245);
     transition: 0.5s ease-in-out;
 }
+
+/* add fade in effect to hide ugly initial margins */
+/* @keyframes fadein {
+    from { opacity: 0;}
+    to {opacity: 1;}
+} */
 
 .block-content:hover {
     background-color: #ffffff;
@@ -13,21 +40,27 @@
 }
 
 .block-content h2 {
-    font-family: "Noto Serif", sans-serif;
-    font-size: 26pt;
+    font-family: "Noto Serif", serif;
+    font-size: 20pt;
     font-weight: bold;
     margin-top: 0;
     margin-bottom: 0;
     padding-top: 10px;
 }
 
+.block-content p {
+    font-family: "Noto Sans", sans-serif;
+}
+
 .block-content a {
     color: #00204E;
-    font-weight: bold;
-    margin-right: 5px;
+    /* font-weight: bold;
+    margin-right: 5px; */
+    transition: 0.5s ease-in-out;
 }
 
 .block-content a:hover {
     color: #008BB0;
-    transition: 0.2s;
+    transition: 0.2s ease-in-out;
 }
+

@@ -2,13 +2,14 @@ html, body {
     font-family: "Noto Sans", sans-serif;
     color: #00204E;
     min-height: 100%;
-}
 
-/* --------- header --------------- */
+}
+/* ----------------- header --------------- */
 header {
     position: fixed;
     width: 100%;
     top: 0;
+    padding-bottom: 5px;
 }
 
 .heading {
@@ -71,6 +72,7 @@ header {
     display: flex;
     text-decoration: none;
     font-weight: bold;
+    font-size: 12pt;
     color: #ffffff;
     height: 100%;
     width: 100%;
@@ -92,22 +94,69 @@ header {
     transition: 0.5s; 
 }
 
+/* -------------------- content ----------------------*/
 .content {
     /* start after the heading */
     margin-top: 180px;
-    /* min-height: 100%; */
     padding-bottom: 100px;
+    min-height: 100%;
+    height: 100%;
 
 }
 
-/* push down the contents further for phone view */
-/* does not really work */
-/* @media (max-aspect-ratio: 99/100) {
-    .content {
-        margin-top: 18vw;
-        min-height: 100%;
-    }
-} */
+.lecture-heading h2 {
+    background-color: #00204E;
+    color: #ffffff;
+    font-family: "Noto Serif", serif;
+    padding-left: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+.lecture-heading h4 {
+    padding-left: 2.5%;
+    font-style: italic;
+}
+
+.week {
+    border: 3px solid #00204E;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 20px;
+    background-color: rgb(218, 231, 245);
+}
+
+.week:hover {
+    background-color: #ffffff;
+    transition: 0.5s ease-in;
+}
+
+.week h2 {
+    font-family: "Noto Serif", sans-serif;
+    font-size: 26pt;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 10px;
+}
+
+.week a {
+    color: #00204E;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.week a:hover {
+    color: #008BB0;
+    transition: 0.2s;
+}
+
+
+
+
+
 
 /* ------------------footer-----------------*/
 footer {
@@ -140,20 +189,4 @@ footer div {
 .site-design {
     font-style: italic;
     color: #ffffff;
-}
-
-.subheadings h2 {
-    background-color: #00204E;
-    color: #ffffff;
-    font-family: "Noto Serif", serif;
-    padding-left: 5%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 5px;
-    margin-top: 50px;
-}
-
-.subheadings h4 {
-    padding-left: 2.5%;
-    font-style: italic;
 }
