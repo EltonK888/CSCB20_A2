@@ -126,16 +126,29 @@ footer div {
     font-family: "Noto Serif", serif;
 }
 
+/* switch to block display for phones */
+@media (max-aspect-ratio: 99/100) {
+    footer {
+        display: block;
+        height: auto;
+    }
+    footer div {
+        text-align: center;
+        padding: 1em;
+    }
+}
+
 .CMS-link a{
     text-decoration: none;
     color: #ffffff
 }
 
-.CMS-link a:hover{
+/* defined globally in subheading+blocks.css */
+/* .CMS-link a:hover{
     color: #008BB0;
     border-bottom: #008BB0 solid 1px;
     transition: 0.5s ease;
-}
+} */
 
 .site-design {
     font-style: italic;
