@@ -12,10 +12,18 @@
     color:#00204E;
     height: 100%;
     text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
-    font-size: 60pt;
+    /* font-size: 60pt; */
+    font-size: 7vw;
     font-weight: 900;
     margin: 0px;
 }
+
+/* decrease title font size on phone */
+/* @media (max-width: 500px) {
+    .CSCB20 h1 {   
+        font-size: 2em;
+    }
+} */
 
 #course-description h2 {
     margin-top: 1em;
@@ -51,13 +59,13 @@
 .info-card h3 {
     font-family: "Noto Serif", serif;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 20pt;
     font-style: italic;
 }
 
 .info-card h4 {
     font-style: italic;
-    font-size: 16px;
+    font-size: 14pt;
     /* force break word because email is too long */
     overflow-wrap: break-word;
 
@@ -72,13 +80,7 @@
     .info-card {
         width: 90%;
         margin: 5px 0px;
-        height: 200pt;
-    }
-    .info-card h3 {
-        font-size: 30pt;
-    }
-    .info-card  h4 {
-        font-size: 26pt;
+        height: 180px;
     }
 }
 
