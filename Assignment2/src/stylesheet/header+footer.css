@@ -19,6 +19,8 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
+    /* make sure header stays on top of everything */
+    z-index: 10000;
 }
 
 .heading {
