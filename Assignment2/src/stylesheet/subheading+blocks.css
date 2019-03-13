@@ -66,3 +66,10 @@
     color: #008BB0;
     transition: 0.2s ease-in-out;
 }
+
+/* smaller list padding for mobile */
+@media (max-width: 500px) {
+    ul, ol {
+        padding-left: 20px;
+    }
+}

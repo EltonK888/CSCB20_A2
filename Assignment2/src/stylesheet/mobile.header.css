@@ -1,0 +1,31 @@
+label {
+    display: none;
+}
+#menu-toggle {
+    display: none; /* hide the checkbox */
+}
+
+/* only activate toggle menu on mobile */
+@media (max-width: 500px) {
+/* from https://www.outofscope.com/css-only-menu-toggle-no-javascript-required/ */
+label {
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+#menu {
+    /* prevent invisible buttons being tapped */
+    visibility: hidden;
+    height: 0;
+}
+#menu-toggle:checked + #menu {
+    visibility: visible;
+    flex-direction: column;
+    height: auto;
+}
+}

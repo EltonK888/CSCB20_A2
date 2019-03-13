@@ -26,6 +26,7 @@ header {
     background-color: #ffffff; /*U of t colour */
     color: #00204E;
     font-family: "Noto Serif", serif;
+    /* does not seem to do anything */
     /* height: 20%; */
     padding-top: 5px;
     padding-bottom: 5px;
@@ -58,11 +59,11 @@ header {
         flex-direction: column;
     }
     .heading h1 {
-        font-size: 5.5vw;
+        font-size: 14pt;
     }
     .heading img {
         order: 1;
-        height: 30vw;
+        height: 100px;
         width: auto;
     }
 }
@@ -87,6 +88,13 @@ header {
     margin: 0;
 }
 
+/* switch to block for phone */
+@media (max-width: 500px) {
+    .nav-bar ul {
+        flex-direction: column;
+    }
+}
+
 .nav-bar ul a {
     display: flex;
     text-decoration: none;
@@ -98,7 +106,8 @@ header {
     justify-content: center;
 }
 .nav-bar ul li {
-    display: flex;
+    /* does not seem to do anything */
+    /* display: flex; */
     justify-content: space-around;
     width: 100%;
     height: 50px;

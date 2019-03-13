@@ -5,6 +5,9 @@
 }
 
 code {
+    display: block;
     font-family: 'Fira Code', monospace;
     background-color: #dddddd;
+    overflow: auto;
+    white-space: nowrap;
 }
