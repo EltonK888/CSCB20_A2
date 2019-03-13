@@ -10,4 +10,5 @@ code {
     background-color: #dddddd;
     overflow: auto;
     white-space: nowrap;
+    max-width: 85%
 }
