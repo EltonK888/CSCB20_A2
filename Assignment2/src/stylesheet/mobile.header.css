@@ -1,4 +1,4 @@
-label {
+header label {
     display: none;
 }
 #menu-toggle {
@@ -8,7 +8,7 @@ label {
 /* only activate toggle menu on mobile */
 @media (max-width: 500px) {
 /* from https://www.outofscope.com/css-only-menu-toggle-no-javascript-required/ */
-label {
+header label {
     cursor: pointer;
     color: #ffffff;
     font-weight: bold;
