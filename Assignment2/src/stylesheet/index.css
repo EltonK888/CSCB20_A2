@@ -72,7 +72,7 @@
 }
 
 /* switch to vertical layout for phones */
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
     .info-card-area {
         flex-direction: column;
     }

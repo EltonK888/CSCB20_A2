@@ -6,26 +6,53 @@ header label {
 }
 
 /* only activate toggle menu on mobile */
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
 /* from https://www.outofscope.com/css-only-menu-toggle-no-javascript-required/ */
+#mobile-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly flex-end;
+}
 header label {
     cursor: pointer;
     color: #ffffff;
     font-weight: bold;
     display: flex;
     height: 50px;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    padding-right: 15px;
+
 }
 
+/* animation to slide down */
+@keyframes slide {
+    0% {
+        transform: translate(0, -20px)
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
 #menu {
     /* prevent invisible buttons being tapped */
     visibility: hidden;
     height: 0;
 }
-#menu-toggle:checked + #menu {
+
+#menu-toggle:checked + label + #menu {
     visibility: visible;
     flex-direction: column;
     height: auto;
+    animation: slide 0.5s ease;
+    animation-fill-mode: forwards;
+    translate: (0, -20px);
+}
+
+/* highlight the menu when checked */
+#menu-toggle:checked + label {
+    background-color: rgb(1, 55, 131);
+    border-radius: 5px;
 }
 }
