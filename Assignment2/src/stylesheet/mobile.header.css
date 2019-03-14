@@ -5,6 +5,12 @@ header label {
     display: none; /* hide the checkbox */
 }
 
+/* add some spaces to the left of the icons*/
+header label .fas {
+    margin-left: 3%;
+    
+}
+
 /* only activate toggle menu on mobile */
 @media (max-width: 1000px) {
 /* from https://www.outofscope.com/css-only-menu-toggle-no-javascript-required/ */
